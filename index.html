@@ -4,64 +4,103 @@
     <title>子郁和他的朋友们</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background-color: #336699; /* Shevchenko Blue */
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        .header {
+            background-color: #ffffff; /* White for contrast */
+            color: #336699; /* Shevchenko Blue */
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: #ffffff; /* White */
+        }
+        .container {
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            justify-content: space-between;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 50px;
         }
-        header {
-            background-color: #003366;
-            padding: 20px;
+        .quote {
+            flex: 1;
+            margin-right: 50px;
+        }
+        .timeline {
+            flex: 1;
+        }
+        .footer {
             text-align: center;
-            color: #ffffff;
-        }
-        main {
-            margin: 15px;
-            display: flex; /* 这里添加了 Flexbox 布局 */
-        }
-        .left, .right {
-            flex: 1; /* 左右两边各占一半的宽度 */
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #336699; /* Shevchenko Blue */
+            color: #ffffff; /* Light Text */
+            text-align: center;
             padding: 20px;
         }
-        footer {
+        a {
+            color: #ffffff; /* White */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        button {
+            background-color: #ffffff; /* White */
+            color: #336699; /* Shevchenko Blue */
+            border: none;
+            padding: 10px 20px;
             text-align: center;
-            padding: 10px;
-            background-color: #003366;
-            color: #ffffff;
-            flex-shrink: 0;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>子郁和他的朋友们</h1>
-    </header>
-    <main>
-        <div class="left">
-            <h2>乔布斯名言</h2>
-            <p>"你的工作将占据你生活的大部分，唯一真正的满意感是做你认为是伟大的工作。而唯一做伟大工作的方式就是热爱你所做的。如果你还没找到，继续找。别停。和心灵的事情一样，你会知道当你找到了。"</p>
+    <div class="header">子郁和他的朋友们</div>
+    <div class="container">
+        <div class="quote">
+            <h1>名言</h1>
+            <p>"Innovation distinguishes between a leader and a follower." - Steve Jobs</p>
+            <button onclick="alert('Thank you for your support!')">Support Us</button>
         </div>
-        <div class="right">
-            <h2>乔布斯生平大事记</h2>
-            <ul>
-                <li>1955年 - 乔布斯出生于旧金山</li>
-                <li>1976年 - 乔布斯与沃兹尼亚克共同创办苹果公司</li>
-                <li>1985年 - 乔布斯离开苹果公司，创办 NeXT</li>
-                <li>1997年 - 乔布斯回归苹果公司</li>
-                <li>2001年 - 苹果公司发布 iPod</li>
-                <li>2007年 - 苹果公司发布 iPhone</li>
-                <li>2011年 - 乔布斯去世</li>
-            </ul>
+        <div class="timeline">
+            <h1>生平大事记</h1>
+            <ul id="timeline"></ul>
         </div>
-    </main>
-    <footer>
-        <p>版权所有 © 2023 子郁和他的朋友们</p>
-    </footer>
+    </div>
+    <div class="footer">
+        <p>©2023 子郁和他的朋友们</p>
+        <p>感谢哥飞的朋友们的鼓舞，没有你们就没有本站点</p>
+        <p><a href="mailto:ziyu.me@gmail.com">联系我们</a></p>
+    </div>
     <script>
-        // 在这里添加 JavaScript 代码
+        var timeline = [
+            { year: 1976, event: "与沃兹尼亚克共同创立了苹果公司" },
+            { year: 1984, event: "推出了Macintosh" },
+            { year: 2001, event: "推出了iPod" },
+            { year: 2007, event: "推出了iPhone" },
+            { year: 2010, event: "推出了iPad" },
+        ];
+        var timelineElement = document.getElementById('timeline');
+        for(var i = 0; i < timeline.length; i++) {
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(timeline[i].year + ": " + timeline[i].event));
+            timelineElement.appendChild(li);
+        }
     </script>
 </body>
 </html>
