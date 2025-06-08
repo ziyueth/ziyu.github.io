@@ -1,105 +1,494 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>子郁和他的朋友们</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziyu & Friends - AI时代的创新之旅</title>
+    <meta name="description" content="欢迎来到Ziyu和朋友们的数字世界，探索AI时代的无限可能">
+    
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            color: #ffffff;
-            background-color: #336699; /* Shevchenko Blue */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        .header {
-            background-color: #ffffff; /* White for contrast */
-            color: #336699; /* Shevchenko Blue */
-            padding: 20px 0;
-            text-align: center;
-            font-size: 2em;
-            font-weight: bold;
-            margin-bottom: 20px;
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
         }
-        h1, h2 {
-            color: #ffffff; /* White */
+
+        /* 背景动画粒子 */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
         }
-        .container {
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.5; }
+        }
+
+        /* 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            margin: 0 auto;
-            max-width: 1200px;
-            padding: 50px;
+            align-items: center;
+            padding: 0 2rem;
         }
-        .quote {
-            flex: 1;
-            margin-right: 50px;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
         }
-        .timeline {
-            flex: 1;
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
-        .footer {
-            text-align: center;
-            position: fixed;
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
             left: 0;
-            bottom: 0;
+            background: #ffd700;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
             width: 100%;
-            background-color: #336699; /* Shevchenko Blue */
-            color: #ffffff; /* Light Text */
+        }
+
+        /* 主要内容区域 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hero区域 */
+        .hero {
             text-align: center;
-            padding: 20px;
+            margin-bottom: 6rem;
         }
-        a {
-            color: #ffffff; /* White */
-            text-decoration: none;
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
         }
-        a:hover {
-            text-decoration: underline;
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            to { text-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
         }
-        button {
-            background-color: #ffffff; /* White */
-            color: #336699; /* Shevchenko Blue */
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-button {
             display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #333;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+        }
+
+        /* 特色区域 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Buy Me A Coffee 按钮区域 */
+        .coffee-section {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .coffee-section:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .coffee-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .coffee-section h4 {
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .coffee-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #FFDD00;
+            color: #333;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 221, 0, 0.3);
+        }
+
+        .coffee-button:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 221, 0, 0.4);
+        }
+
+        /* 页脚 */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 0;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #ffd700;
+            transform: translateY(-3px);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .coffee-section {
+                position: static;
+                transform: none;
+                margin: 2rem auto;
+                max-width: 200px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
         }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="header">子郁和他的朋友们</div>
+    <!-- 背景粒子动画 -->
+    <div class="particles" id="particles"></div>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Ziyu.co</a>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#friends">朋友们</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
     <div class="container">
-        <div class="quote">
-            <h1>乔布斯名言</h1>
-            <p>"Innovation distinguishes between a leader and a follower." - Steve Jobs</p>
-        </div>
-        <div class="timeline">
-            <h1>乔布斯生平大事记</h1>
-            <ul id="timeline"></ul>
-        </div>
+        <!-- Hero区域 -->
+        <section class="hero" id="home">
+            <h1>Ziyu & Friends</h1>
+            <p>欢迎来到我们的数字世界！在这里，我们探索AI时代的无限可能，分享创新思维，连接志同道合的朋友们。让我们一起在技术的海洋中航行，创造属于未来的精彩故事。</p>
+            <a href="#about" class="cta-button">开始探索</a>
+        </section>
+
+        <!-- 特色区域 -->
+        <section class="features" id="about">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI 创新</h3>
+                <p>探索人工智能的前沿技术，分享最新的AI工具和应用，让技术为生活带来更多可能性。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>友谊网络</h3>
+                <p>构建一个温暖的朋友圈，在这里每个人都可以分享自己的想法、项目和创意灵感。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>项目展示</h3>
+                <p>展示我们的创新项目和作品，记录成长的足迹，激发更多创造力和合作机会。</p>
+            </div>
+        </section>
     </div>
-    <div class="footer">
-        <p><a href="libai.html" target="_blank">李白的诗 </a>｜<a href="苏轼.html" target="_blank">苏轼的诗</a></p>
-        <p>感谢哥飞的朋友们的鼓舞 ©2023 子郁和他的朋友们</p>
+
+    <!-- Buy Me A Coffee 区域 -->
+    <div class="coffee-section">
+        <div class="coffee-avatar">Z</div>
+        <h4>支持 Ziyu</h4>
+        <a href="#" class="coffee-button" id="coffee-btn">☕ Buy me a coffee</a>
     </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" title="GitHub">📱</a>
+                <a href="#" title="Twitter">🐦</a>
+                <a href="#" title="LinkedIn">💼</a>
+                <a href="#" title="Email">📧</a>
+            </div>
+            <p>&copy; 2025 Ziyu.co - 与朋友们一起探索AI时代的无限可能</p>
+            <p>Built with ❤️ for the future</p>
+        </div>
+    </footer>
+
     <script>
-        var timeline = [
-            { year: 1976, event: "与沃兹尼亚克共同创立了苹果公司" },
-            { year: 1984, event: "推出了Macintosh" },
-            { year: 2001, event: "推出了iPod" },
-            { year: 2007, event: "推出了iPhone" },
-            { year: 2010, event: "推出了iPad" },
-        ];
-        var timelineElement = document.getElementById('timeline');
-        for(var i = 0; i < timeline.length; i++) {
-            var li = document.createElement('li');
-            li.appendChild(document.createTextNode(timeline[i].year + ": " + timeline[i].event));
-            timelineElement.appendChild(li);
+        // 创建背景粒子动画
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
         }
+
+        // 平滑滚动
+        function smoothScroll() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Buy me a coffee 按钮点击事件
+        document.getElementById('coffee-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            // 这里您可以替换为您真实的 Buy Me A Coffee 链接
+            alert('感谢您的支持！请替换为您真实的 Buy Me A Coffee 链接');
+            // window.open('https://www.buymeacoffee.com/ziyumex', '_blank');
+        });
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            smoothScroll();
+        });
+
+        // 鼠标移动视差效果
+        document.addEventListener('mousemove', function(e) {
+            const particles = document.querySelectorAll('.particle');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            particles.forEach((particle, index) => {
+                const speed = (index % 5 + 1) * 0.5;
+                const xPos = (x - 0.5) * speed;
+                const yPos = (y - 0.5) * speed;
+                particle.style.transform = `translate(${xPos}px, ${yPos}px)`;
+            });
+        });
     </script>
 </body>
 </html>
