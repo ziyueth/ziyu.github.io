@@ -1,0 +1,907 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xapo Bank Referral</title>
+    <meta
+      name="description"
+      content="A multilingual single-page referral site for Xapo Bank with automatic language detection."
+    />
+    <style>
+      :root {
+        --bg: #f4efe6;
+        --paper: rgba(255, 252, 245, 0.92);
+        --ink: #0f1720;
+        --muted: #536170;
+        --accent: #0f766e;
+        --accent-strong: #115e59;
+        --line: rgba(15, 23, 32, 0.12);
+        --gold: #b9892f;
+        --shadow: 0 24px 60px rgba(23, 32, 38, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Noto Sans",
+          sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(185, 137, 47, 0.18), transparent 30%),
+          radial-gradient(circle at right 20%, rgba(15, 118, 110, 0.16), transparent 28%),
+          linear-gradient(180deg, #f8f3eb 0%, #efe7db 100%);
+        min-height: 100vh;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 28px 0 56px;
+      }
+
+      .hero {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .hero-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px 22px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.55));
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--accent), #163c53);
+        color: white;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      .brand-copy strong {
+        display: block;
+        font-size: 0.95rem;
+      }
+
+      .brand-copy span {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .language-switcher {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-end;
+      }
+
+      .language-switcher button {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.82);
+        color: var(--ink);
+        border-radius: 999px;
+        padding: 9px 12px;
+        cursor: pointer;
+        font: inherit;
+        transition: 0.18s ease;
+      }
+
+      .language-switcher button:hover,
+      .language-switcher button[aria-pressed="true"] {
+        background: var(--ink);
+        color: white;
+        border-color: var(--ink);
+      }
+
+      .hero-main {
+        display: grid;
+        grid-template-columns: 1.25fr 0.9fr;
+        gap: 28px;
+        padding: 34px 22px 24px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent-strong);
+      }
+
+      h1 {
+        margin: 14px 0 12px;
+        font-size: clamp(2rem, 5vw, 4.4rem);
+        line-height: 0.95;
+        letter-spacing: -0.045em;
+        max-width: 11ch;
+      }
+
+      .hero-copy {
+        font-size: 1.02rem;
+        line-height: 1.7;
+        color: #26323c;
+        max-width: 62ch;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 14px 18px;
+        font-weight: 600;
+        transition: 0.18s ease;
+      }
+
+      .button-primary {
+        background: var(--ink);
+        color: white;
+      }
+
+      .button-primary:hover {
+        background: #23313b;
+      }
+
+      .button-secondary {
+        background: transparent;
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+
+      .button-secondary:hover {
+        background: rgba(15, 23, 32, 0.05);
+      }
+
+      .hero-note {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .card {
+        background: linear-gradient(160deg, #102c33 0%, #133d48 58%, #1f5b63 100%);
+        color: white;
+        border-radius: 26px;
+        padding: 22px;
+        position: relative;
+        overflow: hidden;
+        min-height: 100%;
+      }
+
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: auto -30% -42% auto;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.24), transparent 60%);
+      }
+
+      .card-badge {
+        display: inline-flex;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: #eef7f7;
+        font-size: 0.82rem;
+      }
+
+      .card h2 {
+        margin: 18px 0 10px;
+        font-size: 1.55rem;
+        line-height: 1.15;
+      }
+
+      .referral-box {
+        margin-top: 16px;
+        padding: 16px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .referral-box strong,
+      .referral-box a {
+        word-break: break-word;
+      }
+
+      .referral-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .copy-btn {
+        border: 0;
+        border-radius: 999px;
+        background: white;
+        color: #133d48;
+        font: inherit;
+        font-weight: 700;
+        padding: 10px 14px;
+        cursor: pointer;
+      }
+
+      .copy-feedback {
+        margin-top: 10px;
+        min-height: 1.3em;
+        font-size: 0.9rem;
+        color: #d7f8f3;
+      }
+
+      .sections {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 22px;
+        box-shadow: 0 14px 38px rgba(23, 32, 38, 0.08);
+      }
+
+      .panel h3 {
+        margin: 0 0 12px;
+        font-size: 1.08rem;
+      }
+
+      .panel p,
+      .panel li {
+        color: #2f3d47;
+        line-height: 1.65;
+      }
+
+      .panel ul {
+        padding-left: 18px;
+        margin: 0;
+      }
+
+      .quote {
+        margin-top: 18px;
+        padding: 22px;
+        background: linear-gradient(180deg, rgba(255, 252, 245, 0.95), rgba(251, 246, 237, 0.95));
+        border: 1px solid var(--line);
+        border-radius: 24px;
+      }
+
+      .quote blockquote {
+        margin: 0;
+        font-size: 1.03rem;
+        line-height: 1.8;
+        color: #26323c;
+      }
+
+      .footer {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.7;
+      }
+
+      .footer strong {
+        color: var(--ink);
+      }
+
+      @media (max-width: 920px) {
+        .hero-main,
+        .sections {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-top {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .language-switcher {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .hero,
+        .panel,
+        .quote {
+          animation: rise 480ms ease-out both;
+        }
+
+        .panel:nth-child(2) {
+          animation-delay: 100ms;
+        }
+
+        .panel:nth-child(3) {
+          animation-delay: 180ms;
+        }
+
+        @keyframes rise {
+          from {
+            opacity: 0;
+            transform: translateY(16px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-top">
+          <div class="brand">
+            <div class="brand-mark">XB</div>
+            <div class="brand-copy">
+              <strong id="brand-title">Xapo Bank Referral</strong>
+              <span id="brand-subtitle">Single-page multilingual invite</span>
+            </div>
+          </div>
+          <div class="language-switcher" id="language-switcher"></div>
+        </div>
+
+        <div class="hero-main">
+          <div>
+            <div class="eyebrow" id="eyebrow">Global banking, one page, many languages</div>
+            <h1 id="headline">Join Xapo Bank with my referral code</h1>
+            <p class="hero-copy" id="intro"></p>
+            <div class="hero-actions">
+              <a
+                id="primary-link"
+                class="button button-primary"
+                href="https://application.xapo.com/membership-application?ref=UKG-KVD-BU"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Apply with my referral link
+              </a>
+              <button id="copy-code" class="button button-secondary" type="button">
+                Copy referral code
+              </button>
+            </div>
+            <div class="hero-note" id="hero-note"></div>
+          </div>
+
+          <aside class="card">
+            <span class="card-badge" id="card-badge">Referral overview</span>
+            <h2 id="card-title">My code: UKG-KVD-BU</h2>
+            <p id="card-copy"></p>
+
+            <div class="referral-box">
+              <div class="referral-row">
+                <strong id="referral-label">Referral code</strong>
+                <button class="copy-btn" id="copy-inline" type="button">Copy</button>
+              </div>
+              <p><strong>UKG-KVD-BU</strong></p>
+            </div>
+
+            <div class="referral-box">
+              <strong id="link-label">Referral link</strong>
+              <p>
+                <a
+                  href="https://application.xapo.com/membership-application?ref=UKG-KVD-BU"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  https://application.xapo.com/membership-application?ref=UKG-KVD-BU
+                </a>
+              </p>
+            </div>
+
+            <div class="copy-feedback" id="copy-feedback"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="sections">
+        <article class="panel">
+          <h3 id="why-title">Why I recommend Xapo Bank</h3>
+          <ul id="why-list"></ul>
+        </article>
+
+        <article class="panel">
+          <h3 id="benefits-title">What the referral can help with</h3>
+          <ul id="benefits-list"></ul>
+        </article>
+
+        <article class="panel">
+          <h3 id="how-title">How to use the referral</h3>
+          <ul id="how-list"></ul>
+        </article>
+      </section>
+
+      <section class="quote">
+        <blockquote id="official-quote"></blockquote>
+      </section>
+
+      <footer class="footer">
+        <p id="disclaimer"></p>
+      </footer>
+    </main>
+
+    <script>
+      const referralCode = "UKG-KVD-BU";
+      const referralLink =
+        "https://application.xapo.com/membership-application?ref=UKG-KVD-BU";
+
+      const translations = {
+        en: {
+          label: "English",
+          lang: "en",
+          brandTitle: "Xapo Bank Referral",
+          brandSubtitle: "Single-page multilingual invite",
+          eyebrow: "Global banking, one page, many languages",
+          headline: "Join Xapo Bank with my referral code",
+          intro:
+            "I built this page for friends and readers who want a cleaner way to understand why I personally like Xapo Bank and how to use my referral link. If you are already considering Xapo, this referral may help reduce your first-year membership cost when the program requirements are met.",
+          primaryLink: "Apply with my referral link",
+          copyCode: "Copy referral code",
+          heroNote:
+            "Important: referral rewards and membership savings depend on eligibility. A balance above USD 5,000 may be required. Please confirm the latest terms during application.",
+          cardBadge: "Referral overview",
+          cardTitle: "My code: UKG-KVD-BU",
+          cardCopy:
+            "I like Xapo because the banking experience and the card are genuinely useful for international users. If you plan to register, using my invitation helps both of us under the referral program.",
+          referralLabel: "Referral code",
+          linkLabel: "Referral link",
+          copyInline: "Copy",
+          copySuccess: "Referral code copied.",
+          copyError: "Copy failed. Please copy it manually.",
+          whyTitle: "Why I recommend Xapo Bank",
+          whyList: [
+            "The product positioning is clear: a premium cross-border banking experience with Bitcoin and USD features in one place.",
+            "The card and account setup feel better suited to frequent international spending than many ordinary local banking options.",
+            "The experience is oriented toward wealth preservation, access, and simplicity rather than a noisy retail-fintech app."
+          ],
+          benefitsTitle: "What the referral can help with",
+          benefitsList: [
+            "The official referral copy mentions the chance to earn up to USD 500 in Bitcoin.",
+            "For eligible users, the first-year fee impact can be reduced through referral cashback, described here as roughly USD 42 per month up to USD 500 over the year.",
+            "Based on the information available to me, a qualifying balance above USD 5,000 may be necessary."
+          ],
+          howTitle: "How to use the referral",
+          howList: [
+            "Open the referral link on this page.",
+            "If needed, enter referral code UKG-KVD-BU during registration.",
+            "Review the current membership terms, fees, regional availability, and eligibility requirements before submitting your application."
+          ],
+          officialQuote:
+            "Official referral text: “Join Xapo Bank and earn up to USD 500 in Bitcoin. Get 0.50% risk-free yield on Bitcoin and 3.35% interest on USD while unlocking more ways to diversify and grow your wealth. Keep it all secure with top-tier digital protection and a network of secret bunkers.”",
+          disclaimer:
+            "This page is a personal referral page, not official financial advice. Product terms, yields, fees, rewards, regional access, and card availability may change. Always verify the latest official Xapo Bank terms before registering."
+        },
+        "zh-CN": {
+          label: "简体中文",
+          lang: "zh-CN",
+          brandTitle: "Xapo Bank 邀请页面",
+          brandSubtitle: "单页多语言推荐站",
+          eyebrow: "一个页面，自动适配多种语言",
+          headline: "使用我的邀请码注册 Xapo Bank",
+          intro:
+            "我做这个页面，是想把我为什么推荐 Xapo Bank、以及如何使用我的邀请链接，说得更直接一点。如果你本来就在考虑注册 Xapo，那么在满足活动条件的前提下，使用我的邀请信息，可能可以帮助你降低第一年的会员成本。",
+          primaryLink: "通过邀请链接注册",
+          copyCode: "复制邀请码",
+          heroNote:
+            "提示：推荐奖励和会员费减免取决于资格条件。通常需要账户余额高于 5,000 美元。请以注册时看到的最新官方条款为准。",
+          cardBadge: "邀请信息总览",
+          cardTitle: "我的邀请码：UKG-KVD-BU",
+          cardCopy:
+            "我个人比较喜欢 Xapo 的原因很简单：它的银行体验和配套卡片在跨境使用上都比较顺手。如果你本来就准备注册，用我的邀请链接对双方都更有价值。",
+          referralLabel: "邀请码",
+          linkLabel: "邀请链接",
+          copyInline: "复制",
+          copySuccess: "邀请码已复制。",
+          copyError: "复制失败，请手动复制。",
+          whyTitle: "为什么我推荐 Xapo Bank",
+          whyList: [
+            "定位比较清晰，把美元账户、比特币相关功能和高端跨境银行体验放在一起。",
+            "对于经常有国际消费或海外资产配置需求的人来说，它的卡和账户体验比普通本地银行更适合。",
+            "整体风格更偏稳健、资产管理和全球使用场景，而不是纯粹的互联网噱头产品。"
+          ],
+          benefitsTitle: "使用邀请信息可能带来的好处",
+          benefitsList: [
+            "官方英文邀请文案里提到，最高可获得价值 500 美元的比特币奖励。",
+            "按我目前掌握的信息，符合条件的用户，第一年的会员费压力有机会通过返还机制进行覆盖，理解上大约是每月返还 42 美元，全年累计最高 500 美元。",
+            "通常还需要满足余额高于 5,000 美元等资格要求。"
+          ],
+          howTitle: "如何使用我的邀请信息",
+          howList: [
+            "点击本页的邀请注册链接。",
+            "如果注册流程里需要填写推荐码，输入 UKG-KVD-BU。",
+            "提交申请前，检查最新的会员费、返利规则、适用国家地区和资格门槛。"
+          ],
+          officialQuote:
+            "官方邀请文案摘要：加入 Xapo Bank，最高可获得 500 美元的比特币奖励；比特币可享 0.50% 收益，美元可享 3.35% 利息，并配有更高级别的数字安全保护。",
+          disclaimer:
+            "本页面是个人推荐页面，不构成金融建议。产品条款、收益、费用、奖励、可用地区和卡片权益都可能变化。注册前请务必自行核对 Xapo Bank 的最新官方条款。"
+        },
+        "zh-TW": {
+          label: "繁體中文",
+          lang: "zh-TW",
+          brandTitle: "Xapo Bank 邀請頁面",
+          brandSubtitle: "單頁多語言推薦站",
+          eyebrow: "一個頁面，自動切換多種語言",
+          headline: "使用我的邀請碼註冊 Xapo Bank",
+          intro:
+            "我做這個頁面，是希望把我為什麼推薦 Xapo Bank，以及如何使用我的邀請連結，說得更清楚。如果你本來就有考慮註冊 Xapo，在符合活動條件的前提下，使用我的邀請資訊，可能可以幫助你降低第一年的會員成本。",
+          primaryLink: "透過邀請連結註冊",
+          copyCode: "複製邀請碼",
+          heroNote:
+            "提醒：推薦獎勵與會員費折抵取決於資格條件，通常需要帳戶餘額高於 5,000 美元。請以註冊時顯示的最新官方條款為準。",
+          cardBadge: "邀請資訊總覽",
+          cardTitle: "我的邀請碼：UKG-KVD-BU",
+          cardCopy:
+            "我個人喜歡 Xapo 的原因很直接：它的銀行體驗和卡片在跨境使用上都很順手。如果你本來就想註冊，用我的邀請連結對雙方都更有價值。",
+          referralLabel: "邀請碼",
+          linkLabel: "邀請連結",
+          copyInline: "複製",
+          copySuccess: "邀請碼已複製。",
+          copyError: "複製失敗，請手動複製。",
+          whyTitle: "為什麼我推薦 Xapo Bank",
+          whyList: [
+            "產品定位清楚，把美元帳戶、比特幣相關功能和高端跨境銀行體驗整合在一起。",
+            "對經常有國際消費或海外資產配置需求的人來說，它的卡片與帳戶體驗比一般本地銀行更合適。",
+            "整體風格偏向穩健、資產管理與全球使用情境，而不是只做表面的金融科技包裝。"
+          ],
+          benefitsTitle: "使用邀請資訊可能帶來的好處",
+          benefitsList: [
+            "官方英文邀請文案提到，最高可獲得 500 美元的比特幣獎勵。",
+            "依我目前掌握的資訊，符合條件的使用者，第一年的會員費壓力有機會透過返還機制降低，理解上大約是每月返還 42 美元，全年累計最高 500 美元。",
+            "通常還需要滿足餘額高於 5,000 美元等資格要求。"
+          ],
+          howTitle: "如何使用我的邀請資訊",
+          howList: [
+            "點擊本頁的邀請註冊連結。",
+            "若註冊流程需要填入推薦碼，輸入 UKG-KVD-BU。",
+            "送出申請前，請再次確認最新會員費、回饋規則、適用地區與資格門檻。"
+          ],
+          officialQuote:
+            "官方邀請文案摘要：加入 Xapo Bank，最高可獲得 500 美元比特幣獎勵；比特幣可享 0.50% 收益，美元可享 3.35% 利息，並搭配高等級數位安全保護。",
+          disclaimer:
+            "本頁面為個人推薦頁，不構成金融建議。產品條款、收益、費用、獎勵、可用地區與卡片權益都可能調整。註冊前請務必自行確認 Xapo Bank 最新官方條款。"
+        },
+        ko: {
+          label: "한국어",
+          lang: "ko",
+          brandTitle: "Xapo Bank 추천 페이지",
+          brandSubtitle: "단일 페이지 다국어 추천 사이트",
+          eyebrow: "하나의 페이지, 여러 언어 자동 전환",
+          headline: "내 추천 코드로 Xapo Bank 가입하기",
+          intro:
+            "이 페이지는 제가 왜 Xapo Bank를 좋게 보는지, 그리고 제 추천 링크를 어떻게 사용하면 되는지 간단하고 명확하게 설명하기 위해 만들었습니다. 이미 Xapo 가입을 고려 중이라면, 조건 충족 시 이 추천 정보가 첫 해 멤버십 비용을 줄이는 데 도움이 될 수 있습니다.",
+          primaryLink: "추천 링크로 가입하기",
+          copyCode: "추천 코드 복사",
+          heroNote:
+            "중요: 추천 혜택과 멤버십 비용 절감은 자격 요건에 따라 달라집니다. 일반적으로 USD 5,000 초과 잔액이 필요할 수 있습니다. 신청 시 최신 공식 조건을 확인하세요.",
+          cardBadge: "추천 정보",
+          cardTitle: "내 추천 코드: UKG-KVD-BU",
+          cardCopy:
+            "제가 Xapo를 좋게 보는 이유는 간단합니다. 은행 경험과 카드 사용성이 해외 결제나 국제 사용자 관점에서 꽤 실용적이기 때문입니다. 이미 가입할 생각이 있다면 제 추천을 쓰는 편이 더 효율적입니다.",
+          referralLabel: "추천 코드",
+          linkLabel: "추천 링크",
+          copyInline: "복사",
+          copySuccess: "추천 코드가 복사되었습니다.",
+          copyError: "복사에 실패했습니다. 직접 복사해 주세요.",
+          whyTitle: "제가 Xapo Bank를 추천하는 이유",
+          whyList: [
+            "USD와 비트코인 기능, 그리고 프리미엄 국제 은행 경험이 한곳에 정리되어 있습니다.",
+            "해외 결제나 국제 자산 운용이 잦은 사용자에게 카드와 계좌 경험이 꽤 실용적입니다.",
+            "과장된 핀테크 앱보다는 자산 보전과 글로벌 사용성에 더 초점이 맞춰져 있습니다."
+          ],
+          benefitsTitle: "추천 혜택으로 기대할 수 있는 점",
+          benefitsList: [
+            "공식 추천 문구에는 최대 USD 500 상당의 비트코인을 받을 수 있다고 적혀 있습니다.",
+            "조건을 충족하면 첫 해 멤버십 비용 부담을 줄일 수 있으며, 여기서는 월 약 USD 42 환급, 연간 최대 USD 500 수준으로 이해하고 있습니다.",
+            "일반적으로 USD 5,000 이상 잔액 유지 등의 조건이 필요할 수 있습니다."
+          ],
+          howTitle: "추천 사용 방법",
+          howList: [
+            "이 페이지의 추천 링크를 엽니다.",
+            "가입 과정에서 코드 입력이 필요하면 UKG-KVD-BU를 입력합니다.",
+            "신청 전 최신 멤버십 요금, 보상 조건, 국가 지원 여부, 자격 요건을 반드시 확인하세요."
+          ],
+          officialQuote:
+            "공식 추천 문구 요약: Xapo Bank에 가입하고 최대 USD 500 상당의 비트코인을 받을 수 있습니다. 비트코인에는 0.50% 수익, USD에는 3.35% 이자가 제공된다고 안내되어 있습니다.",
+          disclaimer:
+            "이 페이지는 개인 추천 페이지이며 금융 자문이 아닙니다. 상품 조건, 수익률, 수수료, 보상, 지원 국가 및 카드 혜택은 변경될 수 있습니다. 가입 전에 Xapo Bank의 최신 공식 조건을 직접 확인하세요."
+        },
+        ja: {
+          label: "日本語",
+          lang: "ja",
+          brandTitle: "Xapo Bank 紹介ページ",
+          brandSubtitle: "単一ページの多言語紹介サイト",
+          eyebrow: "1ページで主要言語に自動対応",
+          headline: "私の紹介コードで Xapo Bank に登録",
+          intro:
+            "このページは、私がなぜ Xapo Bank を気に入っているのか、そして私の紹介リンクをどう使えばよいのかを、できるだけ分かりやすくまとめたものです。すでに Xapo を検討している方なら、条件を満たすことで初年度の会費負担を抑えられる可能性があります。",
+          primaryLink: "紹介リンクで登録する",
+          copyCode: "紹介コードをコピー",
+          heroNote:
+            "重要: 紹介特典や会費の軽減は条件次第です。一般的には USD 5,000 を超える残高が必要になる場合があります。申請時に最新の公式条件を確認してください。",
+          cardBadge: "紹介情報",
+          cardTitle: "私の紹介コード: UKG-KVD-BU",
+          cardCopy:
+            "私が Xapo を好む理由はシンプルです。銀行体験とカードの使い勝手が、国際的に使う人にとってかなり実用的だからです。登録を考えているなら、私の紹介を使う方が自然です。",
+          referralLabel: "紹介コード",
+          linkLabel: "紹介リンク",
+          copyInline: "コピー",
+          copySuccess: "紹介コードをコピーしました。",
+          copyError: "コピーに失敗しました。手動でコピーしてください。",
+          whyTitle: "私が Xapo Bank を勧める理由",
+          whyList: [
+            "USD とビットコイン関連機能、そしてプレミアムな国際銀行体験が一体化されています。",
+            "海外利用や国際決済が多い人にとって、カードと口座の使い勝手が実用的です。",
+            "派手なフィンテック演出よりも、資産保全とグローバル利用に重心があります。"
+          ],
+          benefitsTitle: "紹介を使うメリット",
+          benefitsList: [
+            "公式の紹介文には、最大 USD 500 相当のビットコインを獲得できる可能性があると書かれています。",
+            "条件を満たせば、初年度会費の負担を抑えられる可能性があり、ここでは月 USD 42 前後、年間で最大 USD 500 の還元イメージとして理解しています。",
+            "通常は USD 5,000 超の残高などの条件が必要になる可能性があります。"
+          ],
+          howTitle: "紹介の使い方",
+          howList: [
+            "このページの紹介リンクを開きます。",
+            "登録時にコード入力欄があれば UKG-KVD-BU を入力します。",
+            "申請前に、最新の会費、特典条件、対象地域、資格要件を確認してください。"
+          ],
+          officialQuote:
+            "公式紹介文の要約: Xapo Bank に参加すると最大 USD 500 相当のビットコインを獲得できる可能性があります。ビットコインには 0.50% の利回り、USD には 3.35% の利息が案内されています。",
+          disclaimer:
+            "このページは個人的な紹介ページであり、金融アドバイスではありません。商品条件、利回り、手数料、特典、利用可能地域、カード特典は変更される可能性があります。登録前に必ず Xapo Bank の最新公式条件をご確認ください。"
+        },
+        es: {
+          label: "Español",
+          lang: "es",
+          brandTitle: "Página de referido de Xapo Bank",
+          brandSubtitle: "Sitio multilingüe de una sola página",
+          eyebrow: "Una sola página, varios idiomas",
+          headline: "Únete a Xapo Bank con mi código de referido",
+          intro:
+            "Creé esta página para explicar de forma simple por qué personalmente me gusta Xapo Bank y cómo usar mi enlace de referido. Si ya estabas considerando registrarte, este referido puede ayudarte a reducir el coste de la membresía del primer año si cumples los requisitos del programa.",
+          primaryLink: "Registrarte con mi enlace",
+          copyCode: "Copiar código",
+          heroNote:
+            "Importante: las recompensas y el ahorro en la membresía dependen de tu elegibilidad. Puede requerirse un saldo superior a USD 5.000. Verifica siempre los términos oficiales más recientes durante el registro.",
+          cardBadge: "Resumen del referido",
+          cardTitle: "Mi código: UKG-KVD-BU",
+          cardCopy:
+            "Me gusta Xapo porque la experiencia bancaria y la tarjeta son realmente útiles para usuarios internacionales. Si ya pensabas registrarte, usar mi invitación tiene más sentido para ambos.",
+          referralLabel: "Código de referido",
+          linkLabel: "Enlace de referido",
+          copyInline: "Copiar",
+          copySuccess: "Código copiado.",
+          copyError: "No se pudo copiar. Hazlo manualmente.",
+          whyTitle: "Por qué recomiendo Xapo Bank",
+          whyList: [
+            "Combina funciones de USD y Bitcoin con una experiencia bancaria internacional premium.",
+            "La tarjeta y la cuenta parecen más adecuadas para gasto internacional frecuente que muchas opciones bancarias tradicionales.",
+            "La propuesta está más orientada a seguridad patrimonial, acceso global y simplicidad."
+          ],
+          benefitsTitle: "Qué puede aportar el referido",
+          benefitsList: [
+            "El texto oficial del referido menciona la posibilidad de ganar hasta USD 500 en Bitcoin.",
+            "Para usuarios elegibles, el impacto de la membresía del primer año podría reducirse mediante devoluciones, aquí descritas como aproximadamente USD 42 al mes hasta USD 500 al año.",
+            "Según la información disponible, puede requerirse un saldo superior a USD 5.000."
+          ],
+          howTitle: "Cómo usar mi referido",
+          howList: [
+            "Abre el enlace de referido de esta página.",
+            "Si el proceso lo solicita, introduce el código UKG-KVD-BU.",
+            "Antes de enviar tu solicitud, revisa términos, comisiones, disponibilidad por país y requisitos vigentes."
+          ],
+          officialQuote:
+            "Resumen del texto oficial: “Únete a Xapo Bank y gana hasta USD 500 en Bitcoin. Obtén 0.50% de rendimiento en Bitcoin y 3.35% de interés en USD...”",
+          disclaimer:
+            "Esta página es una recomendación personal y no constituye asesoramiento financiero. Las condiciones del producto, rendimientos, comisiones, recompensas, disponibilidad regional y beneficios de la tarjeta pueden cambiar. Verifica siempre los términos oficiales más recientes de Xapo Bank."
+        },
+        fr: {
+          label: "Français",
+          lang: "fr",
+          brandTitle: "Page de parrainage Xapo Bank",
+          brandSubtitle: "Site multilingue en une seule page",
+          eyebrow: "Une seule page, plusieurs langues",
+          headline: "Rejoignez Xapo Bank avec mon code de parrainage",
+          intro:
+            "J’ai créé cette page pour expliquer plus clairement pourquoi j’apprécie personnellement Xapo Bank et comment utiliser mon lien de parrainage. Si vous envisagez déjà de vous inscrire, ce parrainage peut vous aider à réduire le coût de la première année si vous remplissez les conditions du programme.",
+          primaryLink: "S’inscrire avec mon lien",
+          copyCode: "Copier le code",
+          heroNote:
+            "Important : les récompenses et l’économie sur les frais d’adhésion dépendent des critères d’éligibilité. Un solde supérieur à 5 000 USD peut être requis. Vérifiez toujours les dernières conditions officielles au moment de l’inscription.",
+          cardBadge: "Aperçu du parrainage",
+          cardTitle: "Mon code : UKG-KVD-BU",
+          cardCopy:
+            "J’apprécie Xapo parce que l’expérience bancaire et la carte sont réellement utiles pour un usage international. Si vous comptiez déjà vous inscrire, utiliser mon invitation est simplement plus pertinent.",
+          referralLabel: "Code de parrainage",
+          linkLabel: "Lien de parrainage",
+          copyInline: "Copier",
+          copySuccess: "Code copié.",
+          copyError: "Échec de la copie. Merci de copier manuellement.",
+          whyTitle: "Pourquoi je recommande Xapo Bank",
+          whyList: [
+            "Le produit rassemble USD, fonctionnalités Bitcoin et expérience bancaire internationale premium dans une même offre.",
+            "La carte et le compte paraissent mieux adaptés à des dépenses internationales fréquentes que beaucoup de banques classiques.",
+            "L’approche met davantage l’accent sur la sécurité patrimoniale, l’accès global et la simplicité."
+          ],
+          benefitsTitle: "Ce que le parrainage peut apporter",
+          benefitsList: [
+            "Le texte officiel de parrainage mentionne la possibilité de gagner jusqu’à 500 USD en Bitcoin.",
+            "Pour les utilisateurs éligibles, l’impact des frais de la première année peut être réduit via un mécanisme de remboursement, présenté ici comme environ 42 USD par mois, jusqu’à 500 USD sur l’année.",
+            "D’après les informations disponibles, un solde supérieur à 5 000 USD peut être nécessaire."
+          ],
+          howTitle: "Comment utiliser mon parrainage",
+          howList: [
+            "Ouvrez le lien de parrainage présent sur cette page.",
+            "Si nécessaire pendant l’inscription, entrez le code UKG-KVD-BU.",
+            "Avant de valider votre demande, vérifiez les frais, les conditions, les pays éligibles et les critères actuels."
+          ],
+          officialQuote:
+            "Résumé du texte officiel : “Rejoignez Xapo Bank et gagnez jusqu’à 500 USD en Bitcoin. Obtenez 0,50 % de rendement sur le Bitcoin et 3,35 % d’intérêt sur l’USD...”",
+          disclaimer:
+            "Cette page est une page de recommandation personnelle et ne constitue pas un conseil financier. Les conditions, rendements, frais, récompenses, disponibilité régionale et avantages de la carte peuvent évoluer. Vérifiez toujours les dernières conditions officielles de Xapo Bank avant de vous inscrire."
+        }
+      };
+
+      const languageOrder = ["en", "zh-CN", "zh-TW", "ko", "ja", "es", "fr"];
+      const elements = {
+        brandTitle: document.getElementById("brand-title"),
+        brandSubtitle: document.getElementById("brand-subtitle"),
+        eyebrow: document.getElementById("eyebrow"),
+        headline: document.getElementById("headline"),
+        intro: document.getElementById("intro"),
+        primaryLink: document.getElementById("primary-link"),
+        copyCode: document.getElementById("copy-code"),
+        heroNote: document.getElementById("hero-note"),
+        cardBadge: document.getElementById("card-badge"),
+        cardTitle: document.getElementById("card-title"),
+        cardCopy: document.getElementById("card-copy"),
+        referralLabel: document.getElementById("referral-label"),
+        linkLabel: document.getElementById("link-label"),
+        copyInline: document.getElementById("copy-inline"),
+        whyTitle: document.getElementById("why-title"),
+        whyList: document.getElementById("why-list"),
+        benefitsTitle: document.getElementById("benefits-title"),
+        benefitsList: document.getElementById("benefits-list"),
+        howTitle: document.getElementById("how-title"),
+        howList: document.getElementById("how-list"),
+        officialQuote: document.getElementById("official-quote"),
+        disclaimer: document.getElementById("disclaimer"),
+        copyFeedback: document.getElementById("copy-feedback")
+      };
+
+      function renderList(target, items) {
+        target.innerHTML = "";
+        items.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          target.appendChild(li);
+        });
+      }
+
+      function detectLanguage() {
+        const candidates = [navigator.language, ...(navigator.languages || [])].filter(Boolean);
+        for (const candidate of candidates) {
+          const value = candidate.toLowerCase();
+          if (value.startsWith("zh-tw") || value.startsWith("zh-hk") || value.startsWith("zh-mo")) {
+            return "zh-TW";
+          }
+          if (value.startsWith("zh")) return "zh-CN";
+          if (value.startsWith("ko")) return "ko";
+          if (value.startsWith("ja")) return "ja";
+          if (value.startsWith("es")) return "es";
+          if (value.startsWith("fr")) return "fr";
+          if (value.startsWith("en")) return "en";
+        }
+        return "en";
+      }
+
+      function setLanguage(language) {
+        const key = translations[language] ? language : "en";
+        const t = translations[key];
+
+        document.documentElement.lang = t.lang;
+        document.title = `${t.brandTitle} | Xapo Bank`;
+
+        elements.brandTitle.textContent = t.brandTitle;
+        elements.brandSubtitle.textContent = t.brandSubtitle;
+        elements.eyebrow.textContent = t.eyebrow;
+        elements.headline.textContent = t.headline;
+        elements.intro.textContent = t.intro;
+        elements.primaryLink.textContent = t.primaryLink;
+        elements.copyCode.textContent = t.copyCode;
+        elements.heroNote.textContent = t.heroNote;
+        elements.cardBadge.textContent = t.cardBadge;
+        elements.cardTitle.textContent = t.cardTitle;
+        elements.cardCopy.textContent = t.cardCopy;
+        elements.referralLabel.textContent = t.referralLabel;
+        elements.linkLabel.textContent = t.linkLabel;
+        elements.copyInline.textContent = t.copyInline;
+        elements.whyTitle.textContent = t.whyTitle;
+        elements.benefitsTitle.textContent = t.benefitsTitle;
+        elements.howTitle.textContent = t.howTitle;
+        elements.officialQuote.textContent = t.officialQuote;
+        elements.disclaimer.textContent = t.disclaimer;
+        elements.copyFeedback.textContent = "";
+
+        renderList(elements.whyList, t.whyList);
+        renderList(elements.benefitsList, t.benefitsList);
+        renderList(elements.howList, t.howList);
+
+        document.querySelectorAll("[data-lang]").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.lang === key));
+        });
+
+        localStorage.setItem("xapo-language", key);
+      }
+
+      async function copyReferralCode() {
+        const current = translations[localStorage.getItem("xapo-language")] || translations.en;
+        try {
+          await navigator.clipboard.writeText(referralCode);
+          elements.copyFeedback.textContent = current.copySuccess;
+        } catch (error) {
+          elements.copyFeedback.textContent = current.copyError;
+        }
+      }
+
+      function initLanguageButtons() {
+        const container = document.getElementById("language-switcher");
+        languageOrder.forEach((language) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.dataset.lang = language;
+          button.textContent = translations[language].label;
+          button.setAttribute("aria-pressed", "false");
+          button.addEventListener("click", () => setLanguage(language));
+          container.appendChild(button);
+        });
+      }
+
+      initLanguageButtons();
+
+      const savedLanguage = localStorage.getItem("xapo-language");
+      setLanguage(savedLanguage || detectLanguage());
+
+      document.getElementById("copy-code").addEventListener("click", copyReferralCode);
+      document.getElementById("copy-inline").addEventListener("click", copyReferralCode);
+
+      document.getElementById("primary-link").href = referralLink;
+    </script>
+  </body>
+</html>
