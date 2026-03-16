@@ -1,0 +1,57 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">Xapo Bank hero illustration</title>
+  <desc id="heroDesc">Abstract editorial illustration with a phone, bitcoin, card and global banking motifs.</desc>
+  <rect width="1200" height="780" rx="40" fill="#F2E8D9"/>
+  <circle cx="167" cy="160" r="110" fill="#D3A24C" fill-opacity="0.22"/>
+  <circle cx="1022" cy="122" r="132" fill="#145A52" fill-opacity="0.12"/>
+  <circle cx="1004" cy="655" r="180" fill="#0F766E" fill-opacity="0.12"/>
+  <path d="M0 582C216 497 338 713 565 683C749 658 890 502 1200 597V780H0V582Z" fill="#E2D6C4"/>
+  <rect x="117" y="134" width="446" height="512" rx="38" fill="#FCFBF7" stroke="#C9BBA8" stroke-width="4"/>
+  <rect x="150" y="176" width="380" height="430" rx="28" fill="#0E2B31"/>
+  <rect x="185" y="222" width="311" height="18" rx="9" fill="#88D2C7" fill-opacity="0.65"/>
+  <rect x="185" y="264" width="214" height="14" rx="7" fill="#F5EFE7" fill-opacity="0.84"/>
+  <rect x="185" y="294" width="254" height="14" rx="7" fill="#F5EFE7" fill-opacity="0.54"/>
+  <rect x="185" y="353" width="158" height="158" rx="24" fill="#1A5A66"/>
+  <circle cx="264" cy="432" r="42" fill="#D3A24C"/>
+  <path d="M258 390H272V474H258V390ZM234 404H295V418H234V404ZM232 446H296V460H232V446Z" fill="#14313C"/>
+  <rect x="364" y="353" width="132" height="28" rx="14" fill="#88D2C7"/>
+  <rect x="364" y="397" width="112" height="12" rx="6" fill="#F5EFE7" fill-opacity="0.8"/>
+  <rect x="364" y="423" width="92" height="12" rx="6" fill="#F5EFE7" fill-opacity="0.6"/>
+  <rect x="364" y="468" width="102" height="92" rx="18" fill="#113A45"/>
+  <path d="M404 501L423 522L457 486" stroke="#88D2C7" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <g filter="url(#shadow)">
+    <rect x="648" y="122" width="405" height="252" rx="30" fill="url(#card)"/>
+  </g>
+  <circle cx="961" cy="198" r="44" fill="#F1D196" fill-opacity="0.88"/>
+  <circle cx="1000" cy="198" r="44" fill="#FAE6BE" fill-opacity="0.74"/>
+  <rect x="686" y="166" width="146" height="18" rx="9" fill="#D7FBF5" fill-opacity="0.84"/>
+  <rect x="686" y="206" width="220" height="12" rx="6" fill="#C2EEE7" fill-opacity="0.56"/>
+  <rect x="686" y="237" width="180" height="12" rx="6" fill="#C2EEE7" fill-opacity="0.36"/>
+  <rect x="686" y="303" width="116" height="14" rx="7" fill="#F8EFE0" fill-opacity="0.72"/>
+  <path d="M717 483C776 421 854 418 909 466C960 511 957 594 901 639C845 685 763 684 710 630C655 575 659 500 717 483Z" fill="#FCFBF7" stroke="#C9BBA8" stroke-width="4"/>
+  <circle cx="807" cy="550" r="72" fill="#145A52"/>
+  <path d="M797 501H817V600H797V501ZM763 518H851V537H763V518ZM759 563H855V582H759V563Z" fill="#D8B16D"/>
+  <path d="M951 453C996 431 1039 432 1084 451L1084 621C1034 648 999 649 951 621V453Z" fill="#FFF8EB" stroke="#C9BBA8" stroke-width="4"/>
+  <path d="M969 482C1007 468 1028 468 1066 482V550C1029 568 1008 568 969 550V482Z" fill="#E6D2AD"/>
+  <path d="M987 608C1008 593 1027 593 1048 608" stroke="#145A52" stroke-width="10" stroke-linecap="round"/>
+  <rect x="664" y="60" width="176" height="52" rx="26" fill="#FCFBF7" stroke="#C9BBA8" stroke-width="3"/>
+  <path d="M692 86H713" stroke="#145A52" stroke-width="8" stroke-linecap="round"/>
+  <path d="M736 86H807" stroke="#5F6A74" stroke-width="8" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="card" x1="648" y1="122" x2="1053" y2="374" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11353D"/>
+      <stop offset="0.56" stop-color="#145A52"/>
+      <stop offset="1" stop-color="#1F7E72"/>
+    </linearGradient>
+    <filter id="shadow" x="620" y="102" width="461" height="308" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="8"/>
+      <feGaussianBlur stdDeviation="14"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0588235 0 0 0 0 0.164706 0 0 0 0 0.192157 0 0 0 0.18 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2" result="shape"/>
+    </filter>
+  </defs>
+</svg>

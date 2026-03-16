@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | Ziyu.co</title>
+    <meta name="description" content="Ziyu.co 站点页面索引，包含首页、Xapo 邀请页、Xapo Bank 介绍文章以及其他独立页面。">
+    <style>
+        :root {
+            --bg: #f3f1ec;
+            --panel: #fbfaf7;
+            --panel-strong: #f1ede6;
+            --text: #171717;
+            --muted: #66605a;
+            --line: #d9d2c8;
+            --accent: #1f5f55;
+            --radius: 24px;
+            --content: 960px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(31, 95, 85, 0.12), transparent 24%),
+                linear-gradient(180deg, #f8f6f1 0%, var(--bg) 100%);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .wrap {
+            width: min(var(--content), calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        main {
+            padding: 28px 0 56px;
+        }
+
+        .hero,
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+        }
+
+        .hero {
+            padding: 28px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        h1 {
+            margin: 18px 0 12px;
+            font-size: clamp(2.4rem, 6vw, 4.4rem);
+            line-height: 0.96;
+            letter-spacing: -0.05em;
+        }
+
+        .hero p,
+        .card p {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .list {
+            display: grid;
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 22px;
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--panel-strong);
+            color: var(--muted);
+            font-size: 0.84rem;
+        }
+
+        .open {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .footer {
+            margin-top: 18px;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        @media (max-width: 720px) {
+            .hero,
+            .card {
+                padding: 20px;
+            }
+
+            .card-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <section class="hero">
+            <span class="eyebrow">Site Index</span>
+            <h1>Sitemap</h1>
+            <p>
+                这个页面用于集中列出 Ziyu.co 当前公开可访问的主要页面。新增的 Xapo Bank 介绍文章也已经加入这里，方便从首页统一跳转。
+            </p>
+        </section>
+
+        <section class="list" aria-label="Sitemap links">
+            <article class="card">
+                <div class="card-top">
+                    <strong>首页</strong>
+                    <a class="open" href="./index.html">打开页面</a>
+                </div>
+                <p><span class="badge">Core</span></p>
+                <p>个人主页入口，包含项目概览、联系说明和主要导航链接。</p>
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <strong>Xapo Bank 邀请页面</strong>
+                    <a class="open" href="./xapo.html">打开页面</a>
+                </div>
+                <p><span class="badge">Referral</span></p>
+                <p>多语言单页，放邀请码、注册链接和简要说明。</p>
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <strong>Xapo Bank 介绍文章</strong>
+                    <a class="open" href="./xapo-bank-guide.html">打开页面</a>
+                </div>
+                <p><span class="badge">Article</span></p>
+                <p>新增的图文文章，介绍 Xapo Bank 的定位、会员模式、卡片、适合人群与使用前注意事项。</p>
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <strong>苏轼</strong>
+                    <a class="open" href="./苏轼.html">打开页面</a>
+                </div>
+                <p><span class="badge">Archive</span></p>
+                <p>现有独立页面。</p>
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <strong>Li Bai</strong>
+                    <a class="open" href="./libai.html">打开页面</a>
+                </div>
+                <p><span class="badge">Archive</span></p>
+                <p>现有独立页面。</p>
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <strong>3000</strong>
+                    <a class="open" href="./3000.html">打开页面</a>
+                </div>
+                <p><span class="badge">Archive</span></p>
+                <p>现有独立页面。</p>
+            </article>
+        </section>
+
+        <div class="footer">
+            <a href="./index.html">返回首页</a>
+        </div>
+    </main>
+</body>
+</html>

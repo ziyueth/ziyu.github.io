@@ -1,0 +1,26 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="securityTitle securityDesc">
+  <title id="securityTitle">Xapo Bank security illustration</title>
+  <desc id="securityDesc">Editorial vector artwork showing a vault, shield and account dashboard motifs.</desc>
+  <rect width="1200" height="720" rx="40" fill="#F7F2E8"/>
+  <rect x="90" y="88" width="1020" height="544" rx="36" fill="#FFFCF6" stroke="#D7CCBC" stroke-width="4"/>
+  <rect x="148" y="146" width="440" height="428" rx="28" fill="#163841"/>
+  <rect x="188" y="194" width="172" height="18" rx="9" fill="#93E1D2" fill-opacity="0.88"/>
+  <rect x="188" y="238" width="252" height="12" rx="6" fill="#D6F7F0" fill-opacity="0.62"/>
+  <rect x="188" y="270" width="228" height="12" rx="6" fill="#D6F7F0" fill-opacity="0.42"/>
+  <circle cx="364" cy="396" r="110" fill="#FCFBF7" stroke="#D7CCBC" stroke-width="4"/>
+  <circle cx="364" cy="396" r="62" fill="#D5AA5B"/>
+  <circle cx="364" cy="396" r="20" fill="#163841"/>
+  <path d="M364 300V332" stroke="#163841" stroke-width="12" stroke-linecap="round"/>
+  <path d="M460 396H428" stroke="#163841" stroke-width="12" stroke-linecap="round"/>
+  <path d="M364 492V460" stroke="#163841" stroke-width="12" stroke-linecap="round"/>
+  <path d="M268 396H300" stroke="#163841" stroke-width="12" stroke-linecap="round"/>
+  <rect x="662" y="154" width="386" height="184" rx="30" fill="#E7DBC8"/>
+  <path d="M718 200H882" stroke="#163841" stroke-width="16" stroke-linecap="round"/>
+  <path d="M718 242H958" stroke="#7B6D5C" stroke-width="12" stroke-linecap="round"/>
+  <path d="M718 278H924" stroke="#7B6D5C" stroke-width="12" stroke-linecap="round"/>
+  <path d="M694 450L854 382L1014 450V525C1014 571 980 614 932 628L854 650L776 628C728 614 694 571 694 525V450Z" fill="#145A52"/>
+  <path d="M854 430L970 480V525C970 553 950 579 919 588L854 607L789 588C758 579 738 553 738 525V480L854 430Z" fill="#FCFBF7"/>
+  <path d="M812 521L843 552L902 486" stroke="#145A52" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1032" cy="132" r="56" fill="#D5AA5B" fill-opacity="0.18"/>
+  <circle cx="158" cy="612" r="70" fill="#145A52" fill-opacity="0.12"/>
+</svg>

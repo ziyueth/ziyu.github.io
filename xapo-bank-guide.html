@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xapo Bank 是什么？一篇看懂定位、费用、卡片与适合人群的介绍</title>
+    <meta name="description" content="一篇面向中文读者的 Xapo Bank 介绍文章，梳理其会员模式、银行卡、比特币与美元账户能力、适合人群和使用前的注意事项。">
+    <style>
+        :root {
+            --bg: #efe7db;
+            --paper: rgba(255, 252, 246, 0.94);
+            --paper-strong: #fffdf9;
+            --ink: #152126;
+            --muted: #5f655f;
+            --line: rgba(21, 33, 38, 0.12);
+            --accent: #145a52;
+            --accent-soft: #dff0eb;
+            --gold: #be8a39;
+            --radius: 28px;
+            --content: 1180px;
+            --shadow: 0 22px 58px rgba(21, 33, 38, 0.10);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at top left, rgba(190, 138, 57, 0.20), transparent 28%),
+                radial-gradient(circle at right 14%, rgba(20, 90, 82, 0.18), transparent 26%),
+                linear-gradient(180deg, #f7f0e5 0%, var(--bg) 100%);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .wrap {
+            width: min(var(--content), calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(12px);
+            background: rgba(247, 240, 229, 0.84);
+            border-bottom: 1px solid rgba(21, 33, 38, 0.08);
+        }
+
+        .topbar-inner {
+            min-height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .brand,
+        .nav a,
+        .tag,
+        .button,
+        .source-list a {
+            text-decoration: none;
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: 0.06em;
+        }
+
+        .nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover,
+        .source-list a:hover {
+            color: var(--accent);
+        }
+
+        main {
+            padding: 28px 0 56px;
+        }
+
+        .hero,
+        .panel,
+        .cta {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .hero {
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 0;
+        }
+
+        .hero-copy {
+            padding: 34px 34px 28px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            color: var(--accent);
+            background: rgba(255, 255, 255, 0.52);
+            font-size: 0.86rem;
+            letter-spacing: 0.04em;
+        }
+
+        h1,
+        h2,
+        h3 {
+            letter-spacing: -0.04em;
+        }
+
+        h1 {
+            margin: 18px 0 18px;
+            font-size: clamp(2.5rem, 6vw, 4.8rem);
+            line-height: 0.96;
+            max-width: 10ch;
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: #243036;
+            max-width: 58ch;
+        }
+
+        .hero-meta {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .metric {
+            padding: 16px;
+            border-radius: 22px;
+            background: var(--paper-strong);
+            border: 1px solid var(--line);
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 1.35rem;
+        }
+
+        .metric span {
+            display: block;
+            margin-top: 8px;
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 0.94rem;
+        }
+
+        .hero-art {
+            min-height: 100%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.04));
+        }
+
+        .hero-art img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 320px;
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        .article {
+            display: grid;
+            gap: 18px;
+        }
+
+        .panel {
+            padding: 28px;
+        }
+
+        .panel h2 {
+            margin: 0 0 14px;
+            font-size: 1.7rem;
+        }
+
+        .panel h3 {
+            margin: 0 0 12px;
+            font-size: 1.18rem;
+        }
+
+        .panel p,
+        .panel li {
+            color: #304047;
+            line-height: 1.85;
+            font-size: 1rem;
+        }
+
+        .panel p:last-child,
+        .panel ul:last-child {
+            margin-bottom: 0;
+        }
+
+        .lead {
+            font-size: 1.08rem;
+        }
+
+        .figure {
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .figure figcaption {
+            padding: 14px 20px 18px;
+            color: var(--muted);
+            font-size: 0.93rem;
+            line-height: 1.7;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .mini-card {
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            background: var(--paper-strong);
+        }
+
+        .mini-card strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .mini-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .checklist,
+        .source-list {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .aside {
+            display: grid;
+            gap: 18px;
+            align-content: start;
+            position: sticky;
+            top: 98px;
+            height: fit-content;
+        }
+
+        .cta {
+            padding: 24px;
+        }
+
+        .cta h3 {
+            margin: 0 0 12px;
+            font-size: 1.2rem;
+        }
+
+        .cta p {
+            margin: 0 0 18px;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0 16px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            font-weight: 700;
+            transition: 0.18s ease;
+        }
+
+        .button-primary {
+            background: var(--ink);
+            border-color: var(--ink);
+            color: #fff;
+        }
+
+        .button-primary:hover {
+            background: #223037;
+        }
+
+        .button-secondary:hover {
+            background: var(--accent-soft);
+        }
+
+        .kicker {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: var(--gold);
+            font-size: 0.86rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            margin-top: 18px;
+            padding: 24px 26px;
+            background: rgba(255, 252, 246, 0.88);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: var(--ink);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-grid,
+            .layout,
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .aside {
+                position: static;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .topbar-inner {
+                min-height: auto;
+                padding: 12px 0;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-copy,
+            .panel,
+            .cta {
+                padding: 22px;
+            }
+
+            .hero-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a class="brand" href="./index.html">ZIYU.CO</a>
+            <nav class="nav" aria-label="Primary">
+                <a href="./index.html">首页</a>
+                <a href="./xapo.html">邀请页</a>
+                <a href="./sitemap.html">Sitemap</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <span class="tag">Xapo Bank Guide</span>
+                    <h1>Xapo Bank 是什么？</h1>
+                    <p class="intro">
+                        如果你看到 Xapo Bank，第一反应通常会是：它到底是银行、加密产品，还是给比特币持有者准备的高端账户？
+                        这篇文章不走“拉新文案”路线，而是把它的核心定位、会员费、借记卡、美元与比特币账户能力，以及适合什么样的人，尽量说清楚。
+                    </p>
+                    <div class="hero-meta">
+                        <div class="metric">
+                            <strong>USD 1,000/年</strong>
+                            <span>官网会员页当前展示为年费会员制，而不是免费开户模式。</span>
+                        </div>
+                        <div class="metric">
+                            <strong>BTC + USD</strong>
+                            <span>一个账户体系里同时覆盖比特币与美元使用场景。</span>
+                        </div>
+                        <div class="metric">
+                            <strong>Global Card</strong>
+                            <span>官方 FAQ 强调支持全球借记卡、外汇使用和 BTC cashback。</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-art">
+                    <img src="./assets/xapo-bank-hero.svg" alt="Xapo Bank 主题插图，展示卡片、手机应用和比特币元素。">
+                </div>
+            </div>
+        </section>
+
+        <div class="layout">
+            <article class="article">
+                <section class="panel">
+                    <span class="kicker">定位</span>
+                    <h2>它不是“普通银行 App”，也不是只做交易的加密钱包</h2>
+                    <p class="lead">
+                        从官网表述看，Xapo Bank 把自己放在一个很明确的位置上：面向希望同时管理美元流动性和比特币资产的会员制银行产品。
+                        它试图解决的不是“怎么买币”这种入门问题，而是“持有比特币之后，怎样在安全、消费和日常账户之间取得平衡”。
+                    </p>
+                    <p>
+                        这也是为什么它的网站首页会同时强调几个关键词：受监管银行、比特币持有者、全球借记卡、收益、以及资产安全。
+                        换句话说，Xapo 想做的不是高频投机界面，而是一个更偏长期持有和跨境使用的账户基础设施。
+                    </p>
+                </section>
+
+                <figure class="panel figure">
+                    <img src="./assets/xapo-bank-security.svg" alt="抽象插图，展示金库、盾牌和账户面板，强调安全与账户基础设施。">
+                    <figcaption>
+                        这两张配图目前使用的是站内本地 SVG 插图，便于 GitHub Pages 直接部署。如果你后续要换成大模型生成的更写实图片，可以直接替换这里的资源文件。
+                    </figcaption>
+                </figure>
+
+                <section class="panel">
+                    <span class="kicker">你真正需要知道的三件事</span>
+                    <h2>会员费、卡片与账户结构，是判断它值不值得的核心</h2>
+                    <div class="cards">
+                        <div class="mini-card">
+                            <strong>1. 它是付费会员制</strong>
+                            <p>官网会员页和 FAQ 都把年费写得很明确。Xapo 不是“零门槛开卡”，而是用会员费来换更完整的账户、卡片和服务能力。</p>
+                        </div>
+                        <div class="mini-card">
+                            <strong>2. 卡片是完整体验的一部分</strong>
+                            <p>官方 FAQ 说明卡片需要完成开户并支付会员费后才能申请，且强调虚拟卡、实体卡、外汇和 BTC cashback 等能力。</p>
+                        </div>
+                        <div class="mini-card">
+                            <strong>3. 它围绕 BTC 持有者设计</strong>
+                            <p>如果你只是想找一张免费海外卡，Xapo 可能并不划算；但如果你希望 BTC 和美元账户能协同使用，它的产品逻辑就更容易理解。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <span class="kicker">适合谁</span>
+                    <h2>比较适合这三类人，不适合只想“白嫖功能”的用户</h2>
+                    <ul class="checklist">
+                        <li>已经长期持有比特币，希望资金保管、消费和日常账户之间更顺手地切换的人。</li>
+                        <li>经常跨境支付、旅行或有国际消费需求，希望账户和卡片体验更统一的人。</li>
+                        <li>愿意为服务质量、稳定账户结构和资产安全感支付年费，而不是只比较免费提现或补贴的人。</li>
+                    </ul>
+                    <p>
+                        相反，如果你的需求是“找一个零月费、没有会员费、能临时收款的小工具”，那么它的会员模式很可能一开始就不适合你。
+                    </p>
+                </section>
+
+                <section class="panel">
+                    <span class="kicker">注意事项</span>
+                    <h2>别只盯着收益数字，先确认这些前提</h2>
+                    <p>
+                        Xapo 官网不同页面和搜索抓取结果里，收益数字可能会因为页面版本、地区或活动更新出现差异。比如我在
+                        <time datetime="2026-03-16">2026 年 3 月 16 日</time>
+                        核对时，官网首页展示的是 “up to 4% APY” 和 “3.35% APY on USD deposits”，而会员页搜索摘要里又出现了不同数字。
+                    </p>
+                    <p>
+                        这意味着如果你真的要注册，最稳妥的判断方式不是看二手转述，而是直接看申请页和官方 FAQ 上当前展示的条款：
+                    </p>
+                    <ul class="checklist">
+                        <li>你所在地区是否支持开户和寄送卡片。</li>
+                        <li>当前会员费是多少，以及如何扣费。</li>
+                        <li>卡片费用、补卡规则、ATM 取现和外汇规则有没有调整。</li>
+                        <li>任何收益、返现或推荐活动是否有余额门槛、时间限制或资格要求。</li>
+                    </ul>
+                </section>
+
+                <section class="panel">
+                    <span class="kicker">结论</span>
+                    <h2>一句话总结：Xapo 更像“付费型全球 BTC 银行账户”，不是大众免费工具</h2>
+                    <p>
+                        如果你的目标是把美元账户、比特币持有、卡片消费和跨境使用放到一个更完整的系统里，Xapo 的产品逻辑是成立的。
+                        但如果你只是在找一个便宜、临时、零费用的海外账户，它就未必是性价比最高的选择。
+                    </p>
+                    <p>
+                        所以看 Xapo，最关键的问题不是“它火不火”，而是“你是否真的需要这种会员制、跨境、BTC 友好的账户结构”。
+                        只要这个问题回答清楚，是否值得注册，其实很好判断。
+                    </p>
+                </section>
+            </article>
+
+            <aside class="aside">
+                <section class="cta">
+                    <h3>如果你还想看注册链接</h3>
+                    <p>
+                        我保留了一个独立的 Xapo 邀请页，专门放推荐链接、邀请码和多语言说明。文章页和邀请页拆开后，首页结构也会更清晰。
+                    </p>
+                    <div class="button-row">
+                        <a class="button button-primary" href="./xapo.html">打开邀请页</a>
+                        <a class="button button-secondary" href="./sitemap.html">打开 Sitemap</a>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <h3>图片能不能用大模型生成？</h3>
+                    <p>
+                        可以。GitHub Pages 本身不限制图片来源，只要最终放进仓库的是静态文件即可。当前这版为了部署稳定，先用了本地 SVG 插图。
+                    </p>
+                    <p>
+                        如果你后续想换成 Midjourney、ChatGPT 图像模型或其他工具生成的图，我可以再按统一风格给你补一套中文提示词和替换方案。
+                    </p>
+                </section>
+
+                <section class="panel">
+                    <h3>官方参考链接</h3>
+                    <ul class="source-list">
+                        <li><a href="https://www.xapobank.com/en" target="_blank" rel="noreferrer">Xapo Bank 官网首页</a></li>
+                        <li><a href="https://www.xapobank.com/en/membership" target="_blank" rel="noreferrer">Membership 页面</a></li>
+                        <li><a href="https://www.xapobank.com/en/faq/opening/is-xapo-bank-a-paid-service" target="_blank" rel="noreferrer">是否为付费服务 FAQ</a></li>
+                        <li><a href="https://www.xapobank.com/en/faq/overview/what-is-the-xapo-card" target="_blank" rel="noreferrer">Xapo Card FAQ</a></li>
+                        <li><a href="https://www.xapobank.com/en/faq/ordering/what-are-the-conditions-and-fees-required-for-a-xapo-card" target="_blank" rel="noreferrer">卡片费用 FAQ</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+
+        <footer class="footer">
+            <div>本文是介绍性文章，不构成金融建议。涉及会员费、收益、返现、推荐计划和可用地区的信息，请以 Xapo Bank 官方页面在你申请当日显示的内容为准。</div>
+            <div class="footer-links">
+                <a href="./index.html">返回首页</a>
+                <a href="./xapo.html">Xapo 邀请页</a>
+                <a href="./sitemap.html">Sitemap</a>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
