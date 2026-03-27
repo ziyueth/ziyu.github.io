@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - Ziyu.co</title>
+    <meta name="description" content="联系 Ziyu.co，欢迎反馈、合作或只是打个招呼。">
+
+    <style>
+        :root {
+            --bg: #f5f3ee;
+            --panel: #faf9f6;
+            --panel-strong: #f0ede7;
+            --text: #1a1a1a;
+            --muted: #5c5c5c;
+            --line: #e0dbd3;
+            --accent: #2d2d2d;
+            --radius: 24px;
+            --shadow: 0 20px 50px rgba(0,0,0,0.06);
+            --shadow-hover: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .wrap {
+            width: min(800px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+
+        /* Topbar */
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(245, 243, 238, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(224, 219, 211, 0.6);
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            min-height: 64px;
+            padding: 0 16px;
+            width: min(800px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .brand {
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.9rem;
+            padding: 8px 14px;
+            border-radius: 999px;
+            transition: all 0.2s ease;
+        }
+
+        .nav a:hover {
+            color: var(--text);
+            background: var(--panel-strong);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 100px;
+        }
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 48px;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .intro {
+            color: var(--muted);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 32px 0 16px;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--muted);
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: underline;
+            text-decoration-color: var(--line);
+        }
+
+        a:hover {
+            text-decoration-color: var(--text);
+        }
+
+        /* Contact Methods */
+        .contact-methods {
+            display: grid;
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--panel-strong);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info strong {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+
+        .contact-info span {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .contact-arrow {
+            color: var(--muted);
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .faq-item p {
+            margin: 0;
+        }
+
+        /* Response Time */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--accent) 0%, #3d3d3d 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .highlight-box h3 {
+            margin: 0 0 8px;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            margin: 0 8px;
+            color: var(--muted);
+        }
+
+        footer a:hover {
+            color: var(--text);
+        }
+
+        @media (max-width: 600px) {
+            .panel {
+                padding: 28px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .contact-item {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="./index.html" class="brand">ZIYU.CO</a>
+            <nav class="nav">
+                <a href="./index.html">首页</a>
+                <a href="./sitemap.html">Sitemap</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <article class="panel">
+            <h1>联系我们</h1>
+            <p class="intro">欢迎通过以下方式与我联系。无论是反馈、合作还是只是打个招呼，我都会尽快回复。</p>
+
+            <h2>联系方式</h2>
+            <div class="contact-methods">
+                <a href="mailto:hello@ziyu.co" class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-info">
+                        <strong>电子邮件</strong>
+                        <span>hello@ziyu.co</span>
+                    </div>
+                    <span class="contact-arrow">→</span>
+                </a>
+
+                <a href="https://www.buymeacoffee.com/ziyumex" target="_blank" rel="noreferrer" class="contact-item">
+                    <div class="contact-icon">☕</div>
+                    <div class="contact-info">
+                        <strong>Buy me a coffee</strong>
+                        <span>支持我的创作</span>
+                    </div>
+                    <span class="contact-arrow">→</span>
+                </a>
+
+                <a href="https://github.com/ziyu" target="_blank" rel="noreferrer" class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <div class="contact-info">
+                        <strong>GitHub</strong>
+                        <span>查看我的开源项目</span>
+                    </div>
+                    <span class="contact-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="highlight-box">
+                <h3>回复时间</h3>
+                <p>我通常会在 24-48 小时内回复邮件。如果超过这个时间还没有收到回复，请检查垃圾邮件文件夹，或者尝试通过其他方式联系。</p>
+            </div>
+
+            <h2>常见问题</h2>
+
+            <div class="faq-item">
+                <h3>可以转载你的文章吗？</h3>
+                <p>可以，但需要遵守 Creative Commons 许可协议，注明原作者和来源链接。商业用途请联系我获取授权。</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>接受合作或赞助吗？</h3>
+                <p>我只接受与网站主题相关的、我认为真正有价值的产品或服务的合作。请发送邮件说明合作意向，我会认真考虑。</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>如何订阅更新？</h3>
+                <p>目前可以通过邮件订阅。在首页底部有订阅表单，输入您的邮箱即可订阅。我们不会发送垃圾邮件，您可以随时取消订阅。</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>发现网站有错误或问题？</h3>
+                <p>非常感谢您的反馈！请发送邮件说明问题，我会尽快修复。如果是技术问题，请尽量提供详细的复现步骤。</p>
+            </div>
+
+            <footer>
+                <p>
+                    <a href="./index.html">首页</a> ·
+                    <a href="./privacy.html">隐私政策</a> ·
+                    <a href="./terms.html">服务条款</a>
+                </p>
+            </footer>
+        </article>
+    </main>
+</body>
+</html>

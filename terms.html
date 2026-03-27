@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务条款 - Ziyu.co</title>
+    <meta name="description" content="Ziyu.co 的服务条款，说明使用本网站的条件和规则。">
+
+    <style>
+        :root {
+            --bg: #f5f3ee;
+            --panel: #faf9f6;
+            --panel-strong: #f0ede7;
+            --text: #1a1a1a;
+            --muted: #5c5c5c;
+            --line: #e0dbd3;
+            --accent: #2d2d2d;
+            --radius: 24px;
+            --shadow: 0 20px 50px rgba(0,0,0,0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .wrap {
+            width: min(800px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+
+        /* Topbar */
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(245, 243, 238, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(224, 219, 211, 0.6);
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            min-height: 64px;
+            padding: 0 16px;
+            width: min(800px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .brand {
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.9rem;
+            padding: 8px 14px;
+            border-radius: 999px;
+            transition: all 0.2s ease;
+        }
+
+        .nav a:hover {
+            color: var(--text);
+            background: var(--panel-strong);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 100px;
+        }
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 48px;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .last-updated {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 32px 0 16px;
+            color: var(--text);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 24px 0 12px;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--muted);
+        }
+
+        ul, ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            color: var(--muted);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: underline;
+            text-decoration-color: var(--line);
+        }
+
+        a:hover {
+            text-decoration-color: var(--text);
+        }
+
+        .highlight-box {
+            background: var(--panel-strong);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            margin: 0 8px;
+        }
+
+        @media (max-width: 600px) {
+            .panel {
+                padding: 28px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="./index.html" class="brand">ZIYU.CO</a>
+            <nav class="nav">
+                <a href="./index.html">首页</a>
+                <a href="./sitemap.html">Sitemap</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <article class="panel">
+            <h1>服务条款</h1>
+            <p class="last-updated">最后更新日期：2026年3月19日</p>
+
+            <p>欢迎使用 Ziyu.co（以下简称"本网站"）。访问和使用本网站即表示您同意遵守以下服务条款。如果您不同意这些条款，请停止使用本网站。</p>
+
+            <h2>1. 服务说明</h2>
+            <p>Ziyu.co 是一个个人博客网站，提供以下内容：</p>
+            <ul>
+                <li>关于 AI 工具、数字工具的文章和评测</li>
+                <li>个人项目展示和分享</li>
+                <li>数字生活方式的相关内容</li>
+                <li>其他个人感兴趣的话题</li>
+            </ul>
+
+            <h2>2. 使用规则</h2>
+            <p>使用本网站时，您同意：</p>
+            <ul>
+                <li>遵守所有适用的法律法规</li>
+                <li>不从事任何非法或欺诈活动</li>
+                <li>不干扰或破坏网站的正常运行</li>
+                <li>不尝试未经授权访问网站的任何部分</li>
+                <li>不传播恶意软件、病毒或其他有害代码</li>
+                <li>不抓取、复制或重新分发网站内容用于商业目的</li>
+            </ul>
+
+            <h2>3. 知识产权</h2>
+
+            <h3>3.1 网站内容</h3>
+            <p>本网站上的所有内容（包括文字、图片、代码、设计等），除非另有说明，均受版权保护。未经明确书面许可，不得复制、修改、分发或用于商业目的。</p>
+
+            <h3>3.2 第三方内容</h3>
+            <p>本网站可能包含指向第三方网站的链接或引用第三方内容。这些内容的知识产权归各自所有者所有。我们不对第三方内容的准确性或合法性负责。</p>
+
+            <h3>3.3 用户贡献</h3>
+            <p>如果您通过评论或其他方式向本网站提交内容，您保留对该内容的所有权，但授予我们非独占的、免版税的许可，以使用、修改和展示该内容。</p>
+
+            <h2>4. 免责声明</h2>
+
+            <div class="highlight-box">
+                <p><strong>重要提示：</strong>本网站提供的所有内容仅供参考，不构成专业建议。</p>
+            </div>
+
+            <h3>4.1 一般免责声明</h3>
+            <p>本网站的内容按"现状"提供，不提供任何形式的明示或暗示保证。我们不保证：</p>
+            <ul>
+                <li>网站内容的准确性、完整性或时效性</li>
+                <li>网站将无中断、及时、安全或无错误地运行</li>
+                <li>通过网站获得的结果将符合您的期望</li>
+            </ul>
+
+            <h3>4.2 金融免责声明</h3>
+            <p>本网站可能包含关于金融产品（如 Xapo Bank）的信息。这些信息：</p>
+            <ul>
+                <li>不构成投资建议或金融建议</li>
+                <li>不构成对任何产品或服务的推荐</li>
+                <li>可能不是最新或最准确的信息</li>
+            </ul>
+            <p>在做出任何金融决策之前，请务必咨询合格的专业人士，并查阅相关机构的官方信息。</p>
+
+            <h3>4.3 联盟营销声明</h3>
+            <p>本网站可能包含联盟营销链接（如 Xapo Bank 邀请链接）。这意味着：</p>
+            <ul>
+                <li>如果您通过我们的链接注册某些服务，我们可能会获得佣金</li>
+                <li>这不会增加您的任何费用</li>
+                <li>我们只推荐我们真正认为有价值的产品</li>
+            </ul>
+
+            <h2>5. 责任限制</h2>
+            <p>在法律允许的最大范围内，我们不对以下情况承担责任：</p>
+            <ul>
+                <li>因使用或无法使用本网站而产生的任何直接、间接、附带、特殊或后果性损害</li>
+                <li>因本网站内容中的错误或遗漏而导致的任何损失</li>
+                <li>因依赖本网站提供的信息而做出的任何决策的后果</li>
+            </ul>
+
+            <h2>6. 外部链接</h2>
+            <p>本网站可能包含指向第三方网站的链接。这些链接仅为方便您而提供：</p>
+            <ul>
+                <li>我们不控制这些第三方网站的内容</li>
+                <li>我们不认可这些网站的内容或服务</li>
+                <li>您访问这些网站的风险由您自己承担</li>
+                <li>建议您查看这些网站的条款和隐私政策</li>
+            </ul>
+
+            <h2>7. 服务变更</h2>
+            <p>我们保留以下权利：</p>
+            <ul>
+                <li>随时修改或终止本网站或其任何部分</li>
+                <li>随时更新这些服务条款</li>
+                <li>限制或终止任何用户访问本网站</li>
+            </ul>
+            <p>条款的变更将在本页面上发布，继续使用本网站即表示您接受更新后的条款。</p>
+
+            <h2>8. 适用法律</h2>
+            <p>这些服务条款受中华人民共和国法律管辖。因使用本网站而产生的任何争议应提交中国有管辖权的法院解决。</p>
+
+            <h2>9. 可分割性</h2>
+            <p>如果这些服务条款的任何部分被认定为无效或不可执行，该部分将被视为可分割，不影响其余条款的有效性和可执行性。</p>
+
+            <h2>10. 联系我们</h2>
+            <p>如果您对这些服务条款有任何疑问，请通过以下方式联系我们：</p>
+            <p>电子邮件：<a href="mailto:hello@ziyu.co">hello@ziyu.co</a></p>
+
+            <footer>
+                <p>
+                    <a href="./index.html">首页</a> ·
+                    <a href="./privacy.html">隐私政策</a> ·
+                    <a href="./contact.html">联系我们</a>
+                </p>
+            </footer>
+        </article>
+    </main>
+</body>
+</html>

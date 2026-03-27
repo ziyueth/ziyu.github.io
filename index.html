@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ziyu.co</title>
-    <meta name="description" content="Ziyu.co - 一个关于 AI、工具、项目与长期主义实践的简约主页。">
+    <title>Ziyu - 长期主义实践者</title>
+    <meta name="description" content="关于 AI、工具与长期主义的思考。">
+    <meta name="keywords" content="长期主义, AI, 工具, 思考">
+    
     <style>
-        :root {
-            --bg: #f3f1ec;
-            --panel: #fbfaf7;
-            --panel-strong: #f0ede7;
-            --text: #151515;
-            --muted: #5f5f5f;
-            --line: #d5d0c8;
-            --accent: #1c1c1c;
-            --accent-soft: #ece7de;
-            --radius: 20px;
-            --content: 1120px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        * {
-            box-sizing: border-box;
+        :root {
+            --bg: #f5f3ee;
+            --text: #1a1a1a;
+            --muted: #8b8b8b;
+            --line: #e0dbd3;
+            --accent: #2d2d2d;
         }
 
         html {
@@ -28,584 +27,369 @@
         }
 
         body {
-            margin: 0;
-            font-family: "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+            background: var(--bg);
             color: var(--text);
-            background:
-                linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0)),
-                var(--bg);
-        }
-
-        a {
-            color: inherit;
-        }
-
-        .wrap {
-            width: min(var(--content), calc(100% - 32px));
-            margin: 0 auto;
-        }
-
-        .topbar {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: rgba(243, 241, 236, 0.88);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(213, 208, 200, 0.75);
-        }
-
-        .topbar-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            min-height: 72px;
-        }
-
-        .brand {
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-        }
-
-        .nav {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
-
-        .nav a {
-            text-decoration: none;
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
-
-        .nav a:hover {
-            color: var(--text);
-        }
-
-        main {
-            padding: 28px 0 56px;
-        }
-
-        .hero {
-            display: grid;
-            grid-template-columns: 1.4fr 0.9fr;
-            gap: 18px;
-            align-items: stretch;
-        }
-
-        .panel {
-            background: var(--panel);
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 26px;
-        }
-
-        .hero-primary {
-            min-height: 460px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            padding: 7px 12px;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            color: var(--muted);
-            font-size: 0.86rem;
-            letter-spacing: 0.04em;
-        }
-
-        h1 {
-            margin: 22px 0 16px;
-            font-size: clamp(2.8rem, 6vw, 5.6rem);
-            line-height: 0.94;
-            letter-spacing: -0.05em;
-            max-width: 10ch;
-        }
-
-        .hero-copy {
-            max-width: 62ch;
-            color: #2e2e2e;
-            font-size: 1.05rem;
             line-height: 1.8;
         }
 
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 28px;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
 
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 0 18px;
-            border-radius: 999px;
-            text-decoration: none;
-            border: 1px solid var(--line);
-            font-weight: 600;
-            transition: background 0.18s ease, border-color 0.18s ease;
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding-top: 40px;
         }
 
-        .button-primary {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: #fff;
-        }
-
-        .button-primary:hover {
-            background: #2c2c2c;
-        }
-
-        .button-secondary:hover {
-            background: var(--accent-soft);
-        }
-
-        .hero-meta {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-top: 34px;
-        }
-
-        .metric {
-            padding-top: 12px;
-            border-top: 1px solid var(--line);
-        }
-
-        .metric strong {
-            display: block;
-            font-size: 1.35rem;
+        .logo {
+            font-size: 32px;
             font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
         }
 
-        .metric span {
-            display: block;
-            margin-top: 8px;
+        .tagline {
+            font-size: 16px;
             color: var(--muted);
-            font-size: 0.92rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 80px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
             line-height: 1.6;
         }
 
-        .hero-side {
-            display: grid;
-            gap: 18px;
+        .cta-button {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--accent);
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
         }
 
-        .side-block {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 220px;
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent);
         }
 
-        .side-block h2 {
-            margin: 0 0 10px;
-            font-size: 1.2rem;
-            letter-spacing: -0.03em;
+        /* Blog Section */
+        .blog-section {
+            margin-bottom: 100px;
         }
 
-        .side-block p {
-            margin: 0;
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .blog-list {
+            list-style: none;
+        }
+
+        .blog-item {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--line);
+            transition: all 0.3s;
+        }
+
+        .blog-item:last-child {
+            border-bottom: none;
+        }
+
+        .blog-item:hover {
+            padding-left: 12px;
+        }
+
+        .blog-date {
+            font-size: 12px;
             color: var(--muted);
-            line-height: 1.75;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
         }
 
-        .section {
-            margin-top: 18px;
+        .blog-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
 
-        .section-head {
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            gap: 20px;
+        .blog-title a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .blog-title a:hover {
+            color: var(--accent);
+        }
+
+        .blog-excerpt {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about-section {
+            background: rgba(0, 0, 0, 0.02);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 80px;
+        }
+
+        .about-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .about-section p {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.8;
             margin-bottom: 12px;
         }
 
-        .section-head h2 {
-            margin: 0;
-            font-size: 1.45rem;
-            letter-spacing: -0.03em;
-        }
-
-        .section-head p {
-            margin: 0;
-            color: var(--muted);
-            max-width: 56ch;
-            line-height: 1.7;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .card {
-            background: var(--panel);
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 22px;
-            min-height: 240px;
-        }
-
-        .card-number {
-            display: inline-flex;
-            width: 36px;
-            height: 36px;
-            border-radius: 999px;
-            align-items: center;
-            justify-content: center;
-            background: var(--panel-strong);
-            border: 1px solid var(--line);
-            font-size: 0.88rem;
-            color: var(--muted);
-        }
-
-        .card h3 {
-            margin: 18px 0 10px;
-            font-size: 1.1rem;
-        }
-
-        .card p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.75;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 18px;
-        }
-
-        .list {
-            display: grid;
-            gap: 12px;
-        }
-
-        .list-item {
-            display: grid;
-            grid-template-columns: 120px 1fr auto;
-            gap: 16px;
-            align-items: center;
-            padding: 14px 0;
-            border-top: 1px solid var(--line);
-        }
-
-        .list-item:first-child {
-            border-top: 0;
-            padding-top: 0;
-        }
-
-        .list-label {
-            color: var(--muted);
-            font-size: 0.92rem;
-        }
-
-        .list-item strong {
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .list-item p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.6;
-            font-size: 0.94rem;
-        }
-
-        .list-item a {
-            text-decoration: none;
-            color: var(--muted);
-            border-bottom: 1px solid transparent;
-        }
-
-        .list-item a:hover {
-            color: var(--text);
-            border-bottom-color: var(--text);
-        }
-
-        .note {
-            background: var(--panel-strong);
-        }
-
-        .note h3 {
-            margin: 0 0 14px;
-            font-size: 1rem;
-        }
-
-        .note p {
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.75;
-        }
-
+        /* Footer */
         footer {
-            margin-top: 18px;
-        }
-
-        .footer {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 20px;
-            align-items: start;
-            background: var(--panel);
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 22px 24px;
-        }
-
-        .footer p {
-            margin: 0;
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--line);
             color: var(--muted);
-            line-height: 1.75;
+            font-size: 12px;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-
-        .footer-links a {
-            text-decoration: none;
+        footer a {
             color: var(--text);
+            text-decoration: none;
+            margin: 0 12px;
         }
 
-        .footer-links a:hover {
-            color: var(--muted);
+        footer a:hover {
+            text-decoration: underline;
         }
 
-        @media (max-width: 980px) {
-            .hero,
-            .projects,
-            .grid {
-                grid-template-columns: 1fr;
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px 16px;
             }
 
-            .hero-meta {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 720px) {
-            .topbar-inner,
-            .section-head,
-            .footer,
-            .list-item {
-                grid-template-columns: 1fr;
-                display: grid;
+            .hero h1 {
+                font-size: 32px;
             }
 
-            .topbar-inner {
-                padding: 12px 0;
+            nav {
+                gap: 20px;
             }
 
-            .nav {
-                gap: 12px;
-            }
-
-            .footer-links {
-                justify-content: flex-start;
+            .blog-item:hover {
+                padding-left: 0;
             }
         }
     </style>
 </head>
 <body>
-    <header class="topbar">
-        <div class="wrap topbar-inner">
-            <a href="#home" class="brand">ZIYU.CO</a>
-            <nav class="nav" aria-label="Primary">
-                <a href="#about">关于</a>
-                <a href="#thinking">方法</a>
-                <a href="#projects">项目</a>
-                <a href="./sitemap.html">Sitemap</a>
-                <a href="#contact">联系</a>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">Ziyu</div>
+            <p class="tagline">长期主义实践者 • AI 爱好者 • 工具收集者</p>
+        </header>
 
-    <main class="wrap">
-        <section class="hero" id="home">
-            <article class="panel hero-primary">
-                <div>
-                    <span class="eyebrow">Less, but better</span>
-                    <h1>Ziyu &amp; Friends</h1>
-                    <p class="hero-copy">
-                        一个关于 AI、工具、项目与长期主义实践的个人入口。这里不追求喧闹的展示，
-                        只保留真正重要的内容：正在思考什么、在做什么、值得继续深入什么。
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#projects" class="button button-primary">查看项目</a>
-                        <a href="./xapo-bank-guide.html" class="button button-secondary">Xapo 介绍文章</a>
-                        <a href="./xapo.html" class="button button-secondary">Xapo 邀请页面</a>
-                    </div>
-                </div>
+        <!-- Navigation -->
+        <nav>
+            <a href="#blog" class="active">文章</a>
+            <a href="#about">关于</a>
+            <a href="contact.html">联系</a>
+        </nav>
 
-                <div class="hero-meta">
-                    <div class="metric">
-                        <strong>01</strong>
-                        <span>以简洁、秩序与可持续维护为核心的网站表达方式。</span>
-                    </div>
-                    <div class="metric">
-                        <strong>02</strong>
-                        <span>以 AI 产品、国际工具和独立项目为主要内容方向。</span>
-                    </div>
-                    <div class="metric">
-                        <strong>03</strong>
-                        <span>逐步沉淀为一个长期更新的个人数字首页。</span>
-                    </div>
-                </div>
-            </article>
-
-            <aside class="hero-side">
-                <section class="panel side-block">
-                    <div>
-                        <h2>现在关注</h2>
-                        <p>
-                            AI 工具导航、静态页面构建、个人网站结构整理，以及更克制的视觉语言。
-                        </p>
-                    </div>
-                </section>
-                <section class="panel side-block note">
-                    <div>
-                        <h2>风格原则</h2>
-                        <p>
-                            少，却更好。少装饰，少噪音，少冗余动作；保留清楚的层级、可靠的内容和明确的入口。
-                        </p>
-                    </div>
-                </section>
-            </aside>
+        <!-- Hero -->
+        <section class="hero">
+            <h1>思考、实践、分享</h1>
+            <p>在这里，我记录关于长期主义、AI 工具和数字生活的思考。相信持续的小行动能带来大改变。</p>
+            <a href="#blog" class="cta-button">开始阅读</a>
         </section>
 
-        <section class="section" id="about">
-            <div class="section-head">
-                <h2>关于这个主页</h2>
-                <p>
-                    它不是一个追求“信息堆满”的门户，而是一个有选择地展示方向、项目与推荐内容的起点页。
-                </p>
-            </div>
-            <div class="grid">
-                <article class="card">
-                    <span class="card-number">A</span>
-                    <h3>清晰</h3>
-                    <p>优先让访问者在几秒内知道这是一个什么站点、有什么内容、下一步该点哪里。</p>
-                </article>
-                <article class="card">
-                    <span class="card-number">B</span>
-                    <h3>克制</h3>
-                    <p>减少渐变、悬浮、动画和夸张视觉，把注意力重新交还给内容本身。</p>
-                </article>
-                <article class="card">
-                    <span class="card-number">C</span>
-                    <h3>长期可维护</h3>
-                    <p>结构简单，便于以后继续新增文章、工具推荐页和其他单页面内容。</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section" id="thinking">
-            <div class="section-head">
-                <h2>方法</h2>
-                <p>如果未来继续扩展，这个站点会围绕三个固定原则迭代，而不是不断堆叠新花样。</p>
-            </div>
-            <div class="grid">
-                <article class="card">
-                    <span class="card-number">1</span>
-                    <h3>功能优先</h3>
-                    <p>每一个版块都要有明确目的：介绍、索引、推荐、联系，避免空泛展示。</p>
-                </article>
-                <article class="card">
-                    <span class="card-number">2</span>
-                    <h3>秩序优先</h3>
-                    <p>通过网格、留白、边界和排版建立信息秩序，而不是依靠炫目的视觉特效。</p>
-                </article>
-                <article class="card">
-                    <span class="card-number">3</span>
-                    <h3>内容优先</h3>
-                    <p>好的页面不是元素更多，而是重要内容被更准确地放在合适的位置。</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section" id="projects">
-            <div class="section-head">
-                <h2>项目与入口</h2>
-                <p>这里保留少量但明确的内容入口，后续可以继续往下扩展。</p>
-            </div>
-            <div class="projects">
-                <section class="panel">
-                    <div class="list">
-                        <div class="list-item">
-                            <span class="list-label">Page</span>
-                            <div>
-                                <strong>Xapo Bank 介绍文章</strong>
-                                <p>新增的图文文章，用更完整的方式介绍 Xapo Bank 的定位、会员费、卡片与适合人群。</p>
-                            </div>
-                            <a href="./xapo-bank-guide.html">打开</a>
-                        </div>
-                        <div class="list-item">
-                            <span class="list-label">Index</span>
-                            <div>
-                                <strong>Sitemap 页面</strong>
-                                <p>站点索引页，集中列出首页、Xapo 邀请页、新增文章和其他独立页面入口。</p>
-                            </div>
-                            <a href="./sitemap.html">打开</a>
-                        </div>
-                        <div class="list-item">
-                            <span class="list-label">Page</span>
-                            <div>
-                                <strong>Xapo Bank 邀请页面</strong>
-                                <p>一个单页面、多语言的推荐落地页，用于集中说明注册链接、邀请码与基本资格信息。</p>
-                            </div>
-                            <a href="./xapo.html">打开</a>
-                        </div>
-                        <div class="list-item">
-                            <span class="list-label">Next</span>
-                            <div>
-                                <strong>AI 工具与文章</strong>
-                                <p>后续这里可以继续加入更多单页文章、AI 工具索引或独立项目入口。</p>
-                            </div>
-                            <a href="#contact">规划中</a>
-                        </div>
+        <!-- Blog Section -->
+        <section class="blog-section" id="blog">
+            <h2 class="section-title">最新文章</h2>
+            <ul class="blog-list">
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 27 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-27-openclaw-architecture.html">OpenClaw 架构设计：从 Gateway 到 Agent 的完整解析</a>
                     </div>
-                </section>
-
-                <aside class="panel note" id="contact">
-                    <h3>联系与更新</h3>
-                    <p>
-                        当前这个站点处于持续整理阶段。后续如果增加更多项目页，会继续保持同样的简洁结构和统一风格。
-                    </p>
-                </aside>
-            </div>
+                    <p class="blog-excerpt">深入分析 OpenClaw 的技术架构，理解 Gateway、Agent、Skills 的设计哲学。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 26 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-26-openclaw-enterprise.html">OpenClaw 在企业中的应用：从自动化到智能决策</a>
+                    </div>
+                    <p class="blog-excerpt">探讨 OpenClaw 如何帮助企业提升效率、降低成本、实现智能化转型。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 25 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-25-openclaw-personal.html">个人如何使用 OpenClaw：打造属于自己的 AI 助手</a>
+                    </div>
+                    <p class="blog-excerpt">从零开始，如何为自己构建一个强大的 AI 助手，提升个人生产力。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 24 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-24-openclaw-skills.html">OpenClaw Skills 生态：如何构建和扩展能力</a>
+                    </div>
+                    <p class="blog-excerpt">深入了解 OpenClaw 的 Skills 系统，学习如何创建自己的 Skill。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 23 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-23-openclaw-china.html">OpenClaw 在中国：本地化挑战与机遇</a>
+                    </div>
+                    <p class="blog-excerpt">分析 OpenClaw 在中国市场的发展前景、挑战和机遇。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 22 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-22-openclaw-01.html">OpenClaw 全球热点分析</a>
+                    </div>
+                    <p class="blog-excerpt">OpenClaw 在全球范围内引起的广泛关注和热点话题。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 21 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-21-openclaw-02.html">OpenClaw 产品思维分析</a>
+                    </div>
+                    <p class="blog-excerpt">从产品角度分析 OpenClaw 的设计理念和竞争优势。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 20 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-20-openclaw-03.html">OpenClaw 技术深度探讨</a>
+                    </div>
+                    <p class="blog-excerpt">从技术角度深入探讨 OpenClaw 的实现细节和创新点。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 19 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-19-openclaw-04.html">OpenClaw 未来展望</a>
+                    </div>
+                    <p class="blog-excerpt">展望 OpenClaw 的发展方向和可能的应用场景。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 18 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-18-openclaw-05.html">OpenClaw 社区与生态</a>
+                    </div>
+                    <p class="blog-excerpt">OpenClaw 社区的发展现状和生态建设的重要性。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 28 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-28-long-term-thinking.html">长期主义：为什么坚持比聪明更重要</a>
+                    </div>
+                    <p class="blog-excerpt">探讨长期主义的核心价值，以及如何在日常生活中践行长期思维。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 25 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-25-ai-tools-2026.html">2026 年必备的 AI 工具清单</a>
+                    </div>
+                    <p class="blog-excerpt">精选 10 个提升生产力的 AI 工具，从写作到编程，一应俱全。</p>
+                </li>
+                <li class="blog-item">
+                    <div class="blog-date">2026 年 3 月 20 日</div>
+                    <div class="blog-title">
+                        <a href="blog/2026-03-20-digital-minimalism.html">数字极简主义：如何在信息爆炸时代保持清醒</a>
+                    </div>
+                    <p class="blog-excerpt">分享我的数字生活实践，如何通过极简主义提升专注力和幸福感。</p>
+                </li>
+            </ul>
         </section>
 
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <h2>关于我</h2>
+            <p>我是一个长期主义的实践者，相信通过持续的学习和思考，可以在 AI 时代找到属于自己的位置。</p>
+            <p>这个网站是我的思想实验室，记录我对技术、工具和生活的思考。欢迎一起探讨。</p>
+        </section>
+
+        <!-- Footer -->
         <footer>
-            <div class="footer">
-                <div>
-                    <p>&copy; 2026 Ziyu.co</p>
-                    <p>与朋友们一起持续整理、构建与分享更清晰的数字空间。</p>
-                </div>
-                <div class="footer-links">
-                    <a href="./xapo-bank-guide.html">Xapo 文章</a>
-                    <a href="./xapo.html">Xapo 页面</a>
-                    <a href="./sitemap.html">Sitemap</a>
-                    <a href="https://www.buymeacoffee.com/ziyumex" target="_blank" rel="noreferrer">Buy me a coffee</a>
-                </div>
+            <p>© 2026 Ziyu. All rights reserved.</p>
+            <div>
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="contact.html">Contact</a>
             </div>
         </footer>
-    </main>
+    </div>
 </body>
 </html>
