@@ -185,6 +185,11 @@
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
       }
 
       .language-switcher button {
@@ -197,6 +202,8 @@
         font: inherit;
         font-size: 0.85rem;
         transition: all 0.2s ease;
+        min-width: 44px;
+        text-align: center;
       }
 
       .language-switcher button:hover,
@@ -732,6 +739,7 @@
           <a href="./xapo-bank-guide.html">详细评测</a>
           <a href="./sitemap.html">Sitemap</a>
         </nav>
+        <div class="language-switcher" id="language-switcher"></div>
       </div>
     </header>
 
