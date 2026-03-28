@@ -197,27 +197,36 @@
         position: relative;
       }
 
-      .language-switcher button {
+      .language-switcher select {
         border: 1px solid var(--line);
         background: var(--panel);
         color: var(--text);
         border-radius: 8px;
-        padding: 6px 12px;
+        padding: 8px 12px;
         cursor: pointer;
         font: inherit;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         transition: all 0.2s ease;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        white-space: nowrap;
+        min-width: 100px;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+        background-size: 1.2em;
+        padding-right: 32px;
       }
 
-      .language-switcher button:hover,
-      .language-switcher button[aria-pressed="true"] {
-        background: var(--accent);
-        color: white;
+      .language-switcher select:hover {
+        background-color: rgba(0, 0, 0, 0.05);
         border-color: var(--accent);
+      }
+
+      .language-switcher select:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
       }
 
       /* Hero Main */
@@ -738,7 +747,6 @@
           </div>
           <div class="brand-copy">
             <strong>Xapo Bank</strong>
-            <span>by Ziyu.co</span>
           </div>
         </a>
         <nav class="nav">
