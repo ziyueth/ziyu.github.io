@@ -1354,6 +1354,16 @@
       }
 
       function detectLanguage() {
+        // 优先检查 URL 参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        if (urlLang && translations[urlLang]) return urlLang;
+        
+        // 检查 localStorage 中保存的语言
+        const savedLang = localStorage.getItem("xapo-language");
+        if (savedLang && translations[savedLang]) return savedLang;
+        
+        // 检查浏览器语言
         const candidates = [navigator.language, ...(navigator.languages || [])].filter(Boolean);
         for (const candidate of candidates) {
           const value = candidate.toLowerCase();
@@ -1365,7 +1375,9 @@
           if (value.startsWith("fr")) return "fr";
           if (value.startsWith("en")) return "en";
         }
-        return "en";
+        
+        // 默认返回中文（主要用户群体）
+        return "zh-CN";
       }
 
       function setLanguage(language) {
