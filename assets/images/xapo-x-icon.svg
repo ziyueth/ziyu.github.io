@@ -1,0 +1,5 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- X shape from crossed ellipses -->
+  <ellipse cx="14" cy="14" rx="10" ry="6" transform="rotate(-45 14 14)" stroke="#E53E3E" stroke-width="2.5" fill="none"/>
+  <ellipse cx="26" cy="26" rx="10" ry="6" transform="rotate(-45 26 26)" stroke="#E53E3E" stroke-width="2.5" fill="none"/>
+</svg>
