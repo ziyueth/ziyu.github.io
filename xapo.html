@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xapo Bank Referral - Get Up to $500 in Bitcoin | Ziyu.co</title>
-    <meta name="description" content="Join Xapo Bank with my referral code UKG-KVD-BU and earn up to $500 in Bitcoin. Premium banking with BTC rewards." />
+    <title>Xapo Bank Guide & Referral | Bitcoin, USD and Global Spending | Ziyu.co</title>
+    <meta name="description" content="An independent multilingual guide to Xapo Bank: regulated USD banking, Bitcoin services, conversion, global transfers, card spending and referral terms." />
 
     <style>
       :root {
@@ -34,6 +34,30 @@
         background: var(--bg);
         line-height: 1.7;
         -webkit-font-smoothing: antialiased;
+      }
+
+      html[dir="rtl"] body {
+        font-family: "Noto Sans Arabic", Tahoma, Arial, sans-serif;
+      }
+
+      html[dir="rtl"] .hero-content,
+      html[dir="rtl"] .referral-card,
+      html[dir="rtl"] .benefits-card,
+      html[dir="rtl"] .feature-panel,
+      html[dir="rtl"] .quote-section,
+      html[dir="rtl"] .footer {
+        direction: rtl;
+        text-align: right;
+      }
+
+      html[dir="rtl"] .problem-item,
+      html[dir="rtl"] .benefit-item {
+        flex-direction: row-reverse;
+      }
+
+      html[dir="rtl"] .feature-panel ul {
+        padding-right: 22px;
+        padding-left: 0;
       }
 
       /* Animations */
@@ -778,13 +802,14 @@
             <img src="assets/images/xapo-logo.jpg?v=20260328" alt="Xapo">
           </div>
           <div class="brand-copy">
-            <strong>Xapo Bank</strong>
-            <span>A Members-Only Private Bank For Bitcoin Holders</span>
+            <strong id="brand-title">Xapo Bank</strong>
+            <span id="brand-subtitle">Regulated banking for Bitcoin holders</span>
           </div>
         </a>
         <nav class="nav">
           <a href="./index.html">首页</a>
           <a href="./xapo-bank-guide.html">详细评测</a>
+          <a href="./blog/2026-07-11-xapo-bank-regulated-bitcoin-banking.html">English Guide</a>
           <a href="./sitemap.html">Sitemap</a>
         </nav>
         <div class="language-switcher" id="language-switcher"></div>
@@ -794,29 +819,25 @@
     <main class="shell">
       <!-- Hero Section -->
       <section class="hero">
-        <div class="hero-top">
-          <div class="language-switcher" id="language-switcher"></div>
-        </div>
-
         <div class="hero-main">
           <div class="hero-content">
             <div class="reward-badge animate-in" id="reward-badge">Earn up to $500 in Bitcoin</div>
 
-            <h1 id="headline">The Bank That Pays You in Bitcoin</h1>
+            <h1 id="headline">Bitcoin and everyday banking, in one membership</h1>
 
             <p class="hero-intro" id="intro">
-              <strong>Xapo Bank solves a real problem:</strong> Traditional banks give you 0% interest while inflation eats your savings. Xapo gives you <strong>0.5% yield on Bitcoin</strong> and <strong>3.35% on USD</strong> — plus a premium debit card for global spending.
+              <strong>Built for a specific use case:</strong> hold Bitcoin, access regulated USD banking, convert supported assets, transfer money and spend globally from one membership.
             </p>
 
             <!-- Problems Xapo Solves -->
             <div class="problems-section">
-              <div class="problems-title" id="problems-title">Why I Switched to Xapo</div>
+              <div class="problems-title" id="problems-title">Where Xapo can be useful</div>
               <div class="problem-list">
                 <div class="problem-item">
                   <div class="problem-icon">💸</div>
                   <div class="problem-text">
-                    <strong id="problem-1-title">0% Interest Problem</strong>
-                    <span id="problem-1-desc">Traditional banks pay nothing while Xapo gives you 3.35% on USD deposits</span>
+                    <strong id="problem-1-title">Regulated Access</strong>
+                    <span id="problem-1-desc">Fiat banking and Bitcoin services operate through separate regulated Gibraltar entities</span>
                   </div>
                 </div>
                 <div class="problem-item">
@@ -829,8 +850,8 @@
                 <div class="problem-item">
                   <div class="problem-icon">🔒</div>
                   <div class="problem-text">
-                    <strong id="problem-3-title">Bitcoin Exposure</strong>
-                    <span id="problem-3-desc">Earn 0.5% yield on Bitcoin without the complexity of crypto exchanges</span>
+                    <strong id="problem-3-title">BTC and Fiat Workflow</strong>
+                    <span id="problem-3-desc">Hold, convert and move supported assets in one documented account workflow</span>
                   </div>
                 </div>
               </div>
@@ -889,29 +910,29 @@
               <div class="benefit-item">
                 <div class="benefit-icon">💰</div>
                 <div class="benefit-text">
-                  <strong>Up to $500 BTC</strong>
-                  <span>Referral reward paid in Bitcoin</span>
+                  <strong id="benefit-1-title">Up to $500 in BTC</strong>
+                  <span id="benefit-1-desc">Subject to activation and current referral terms</span>
                 </div>
               </div>
               <div class="benefit-item">
                 <div class="benefit-icon">📈</div>
                 <div class="benefit-text">
-                  <strong>0.5% BTC Yield</strong>
-                  <span>Earn on your Bitcoin balance</span>
+                  <strong id="benefit-2-title">Regulated Bitcoin Services</strong>
+                  <span id="benefit-2-desc">BTC is held separately and is not deposit-insured</span>
                 </div>
               </div>
               <div class="benefit-item">
                 <div class="benefit-icon">💵</div>
                 <div class="benefit-text">
-                  <strong>3.35% USD Interest</strong>
-                  <span>High-yield USD savings</span>
+                  <strong id="benefit-3-title">USD Banking Rails</strong>
+                  <span id="benefit-3-desc">Access supported bank and stablecoin transfer routes</span>
                 </div>
               </div>
               <div class="benefit-item">
                 <div class="benefit-icon">💳</div>
                 <div class="benefit-text">
-                  <strong>Premium Card</strong>
-                  <span>Global spending, no forex fees</span>
+                  <strong id="benefit-4-title">Premium Debit Card</strong>
+                  <span id="benefit-4-desc">Global spending with no Xapo FX fee, subject to terms</span>
                 </div>
               </div>
             </div>
@@ -940,8 +961,8 @@
           <ul id="how-list">
             <li>Click the referral link</li>
             <li>Complete registration</li>
-            <li>Maintain $5,000+ balance</li>
-            <li>Receive BTC rewards monthly</li>
+            <li>Meet the current activation requirements</li>
+            <li>Meet the current reward conditions</li>
           </ul>
         </article>
 
@@ -951,7 +972,7 @@
           <p id="note-intro">Make sure you understand these before applying:</p>
           <ul id="note-list">
             <li>$1000/year membership fee</li>
-            <li>$5,000 minimum balance for rewards</li>
+            <li>Referral eligibility follows current terms</li>
             <li>Available in select countries</li>
             <li>Terms may change</li>
           </ul>
@@ -961,17 +982,18 @@
       <!-- Official Quote -->
       <section class="quote-section">
         <blockquote id="official-quote">
-          "Join Xapo Bank and earn up to USD 500 in Bitcoin. Get 0.50% risk-free yield on Bitcoin and 3.35% interest on USD while unlocking more ways to diversify and grow your wealth."
+          Xapo combines regulated USD banking and regulated Bitcoin services, while keeping their legal protections distinct.
         </blockquote>
       </section>
 
       <!-- Footer -->
       <footer class="footer">
         <p id="disclaimer">
-          <strong>Disclaimer:</strong> This is a personal referral page, not financial advice. Xapo Bank has a $1000/year membership fee and requires a $5,000+ balance for referral rewards. Please read all terms before applying. Product terms and availability may change.
+          <strong>Disclosure:</strong> This is an independent personal referral page, not financial, legal or tax advice. I may receive a reward if you qualify and activate a membership. Check current eligibility, pricing and referral terms directly with Xapo.
         </p>
         <p class="footer-links">
           <a href="./xapo-bank-guide.html">📖 Read Full Review</a>
+          <a href="./blog/2026-07-11-xapo-bank-regulated-bitcoin-banking.html">English Introduction</a>
           <a href="./index.html">🏠 Back to Home</a>
           <a href="./sitemap.html">🗺️ Sitemap</a>
         </p>
@@ -987,17 +1009,17 @@
           label: "English",
           lang: "en",
           brandTitle: "Xapo Bank",
-          brandSubtitle: "A Members-Only Private Bank For Bitcoin Holders",
+          brandSubtitle: "Regulated banking for Bitcoin holders",
           rewardBadge: "Earn up to $500 in Bitcoin",
-          headline: "The Bank That Pays You in Bitcoin",
-          intro: "<strong>Xapo Bank solves a real problem:</strong> Traditional banks give you 0% interest while inflation eats your savings. Xapo gives you <strong>0.5% yield on Bitcoin</strong> and <strong>3.35% on USD</strong> — plus a premium debit card for global spending.",
-          problemsTitle: "Why I Switched to Xapo",
-          problem1Title: "0% Interest Problem",
-          problem1Desc: "Traditional banks pay nothing while Xapo gives you 3.35% on USD deposits",
+          headline: "Bitcoin and everyday banking, in one membership",
+          intro: "<strong>Built for a specific use case:</strong> hold Bitcoin, access regulated USD banking, convert supported assets, transfer money and spend globally from one membership.",
+          problemsTitle: "Where Xapo can be useful",
+          problem1Title: "Regulated Access",
+          problem1Desc: "Fiat banking and Bitcoin services operate through separate regulated Gibraltar entities",
           problem2Title: "Global Spending",
           problem2Desc: "Premium debit card works worldwide with no hidden forex fees",
-          problem3Title: "Bitcoin Exposure",
-          problem3Desc: "Earn 0.5% yield on Bitcoin without the complexity of crypto exchanges",
+          problem3Title: "BTC and Fiat Workflow",
+          problem3Desc: "Hold, convert and move supported assets in one documented account workflow",
           primaryLink: "🚀 Join Xapo Bank Now",
           copyCode: "📋 Copy Referral Code: UKG-KVD-BU",
           heroNote: "💡 <strong>Pro tip:</strong> Use my referral code <strong>UKG-KVD-BU</strong> when signing up. You'll get up to $500 in Bitcoin rewards, and I'll get a small bonus too. It's a win-win.",
@@ -1010,32 +1032,40 @@
           copySuccess: "✅ Copied! Paste during registration",
           copyError: "❌ Copy failed. Please copy manually.",
           benefitsTitle: "What You Get",
+          benefit1Title: "Up to $500 in BTC",
+          benefit1Desc: "Subject to activation and current referral terms",
+          benefit2Title: "Regulated Bitcoin Services",
+          benefit2Desc: "BTC is held separately and is not deposit-insured",
+          benefit3Title: "USD Banking Rails",
+          benefit3Desc: "Access supported bank and stablecoin transfer routes",
+          benefit4Title: "Premium Debit Card",
+          benefit4Desc: "Global spending with no Xapo FX fee, subject to terms",
           whyTitle: "Why Xapo Bank?",
           whyIntro: "Not just another digital bank. Xapo combines traditional banking security with crypto innovation.",
           whyList: [
             "Licensed banking institution",
-            "Real Bitcoin yield, not speculation",
+            "Separate regulated framework for Bitcoin services",
             "Physical and virtual cards",
             "24/7 customer support"
           ],
           howTitle: "How Referral Works",
-          howIntro: "Simple 3-step process to get your Bitcoin rewards:",
+          howIntro: "Check the current promotion before applying:",
           howList: [
             "Click the referral link",
             "Complete registration",
-            "Maintain $5,000+ balance",
-            "Receive BTC rewards monthly"
+            "Meet the current activation requirements",
+            "Meet the current activation and reward conditions"
           ],
           noteTitle: "Important Notes",
           noteIntro: "Make sure you understand these before applying:",
           noteList: [
             "$1000/year membership fee",
-            "$5,000 minimum balance for rewards",
+            "Referral eligibility follows current terms",
             "Available in select countries",
             "Terms may change"
           ],
-          officialQuote: "Join Xapo Bank and earn up to USD 500 in Bitcoin. Get 0.50% risk-free yield on Bitcoin and 3.35% interest on USD while unlocking more ways to diversify and grow your wealth.",
-          disclaimer: "<strong>Disclaimer:</strong> This is a personal referral page, not financial advice. Xapo Bank has a $1000/year membership fee and requires a $5,000+ balance for referral rewards. Please read all terms before applying. Product terms and availability may change."
+          officialQuote: "Xapo combines regulated USD banking and regulated Bitcoin services, while keeping their legal protections distinct.",
+          disclaimer: "<strong>Disclosure:</strong> This is an independent personal referral page, not financial, legal or tax advice. I may receive a reward if you qualify and activate a membership. The membership is currently advertised at $1,000/year. Bitcoin is not covered by the Gibraltar Deposit Guarantee Scheme. Check eligibility, fees, rates and referral terms directly with Xapo before applying."
         },
         "zh-CN": {
           label: "简体中文",
@@ -1044,10 +1074,10 @@
           brandSubtitle: "比特币收益数字银行",
           rewardBadge: "最高可获得 $500 比特币奖励",
           headline: "付给你比特币的银行",
-          intro: "<strong>Xapo Bank 解决了一个真实问题：</strong>传统银行给你 0% 利息，而通胀却在侵蚀你的储蓄。Xapo 给你<strong>比特币 0.5% 收益</strong>和<strong>美元 3.35% 利息</strong>——还有全球通用的顶级借记卡。",
+          intro: "<strong>适合明确的使用场景：</strong>在一个会员账户中持有比特币、使用受监管的美元银行服务、兑换支持的资产、转账并进行全球消费。",
           problemsTitle: "我为什么选择 Xapo",
           problem1Title: "0% 利息困境",
-          problem1Desc: "传统银行零利息，Xapo 美元存款给 3.35% 收益",
+          problem1Desc: "法币银行与比特币服务分别由直布罗陀受监管实体提供",
           problem2Title: "全球消费",
           problem2Desc: "顶级借记卡全球通用，无隐藏外汇费用",
           problem3Title: "比特币敞口",
@@ -1077,19 +1107,19 @@
           howList: [
             "点击邀请链接",
             "完成注册",
-            "保持 $5,000+ 余额",
-            "每月获得 BTC 奖励"
+            "满足当前活动的激活要求",
+            "满足当前奖励条件"
           ],
           noteTitle: "重要提示",
           noteIntro: "申请前请确保了解以下信息：",
           noteList: [
             "年费 $1000",
-            "奖励需 $5,000 最低余额",
+            "奖励资格以当前条款为准",
             "仅限部分国家",
             "条款可能变更"
           ],
-          officialQuote: "加入 Xapo Bank，最高可获得 500 美元比特币奖励。比特币享受 0.50% 无风险收益，美元享受 3.35% 利息，解锁更多财富增值方式。",
-          disclaimer: "<strong>免责声明：</strong>本页面为个人推荐页面，不构成金融建议。Xapo Bank 年费 $1000，推荐奖励需 $5,000+ 余额。申请前请阅读全部条款。产品条款和可用性可能变更。"
+          officialQuote: "Xapo 将受监管的美元银行服务与受监管的比特币服务结合，同时明确区分两者的法律保障。",
+          disclaimer: "<strong>免责声明：</strong>本页面为独立的个人推荐页面，不构成金融、法律或税务建议。如你符合资格并成功激活会员，我可能获得奖励。比特币不受直布罗陀存款保障计划保护。申请前请向 Xapo 核对当前资格、费用和活动条款。"
         },
         "zh-TW": {
           label: "繁體中文",
@@ -1098,10 +1128,10 @@
           brandSubtitle: "比特幣收益數位銀行",
           rewardBadge: "最高可獲得 $500 比特幣獎勵",
           headline: "付給你比特幣的銀行",
-          intro: "<strong>Xapo Bank 解決了一個真實問題：</strong>傳統銀行給你 0% 利息，而通膨卻在侵蝕你的儲蓄。Xapo 給你<strong>比特幣 0.5% 收益</strong>和<strong>美元 3.35% 利息</strong>——還有全球通用的頂級借記卡。",
+          intro: "<strong>適合明確的使用場景：</strong>在一個會員帳戶中持有比特幣、使用受監管的美元銀行服務、兌換支援資產、轉帳並進行全球消費。",
           problemsTitle: "我為什麼選擇 Xapo",
           problem1Title: "0% 利息困境",
-          problem1Desc: "傳統銀行零利息，Xapo 美元存款給 3.35% 收益",
+          problem1Desc: "法幣銀行與比特幣服務分別由直布羅陀受監管實體提供",
           problem2Title: "全球消費",
           problem2Desc: "頂級借記卡全球通用，無隱藏外匯費用",
           problem3Title: "比特幣敞口",
@@ -1131,19 +1161,19 @@
           howList: [
             "點擊邀請連結",
             "完成註冊",
-            "保持 $5,000+ 餘額",
-            "每月獲得 BTC 獎勵"
+            "符合目前活動的啟用要求",
+            "符合目前獎勵條件"
           ],
           noteTitle: "重要提示",
           noteIntro: "申請前請確保了解以下資訊：",
           noteList: [
             "年費 $1000",
-            "獎勵需 $5,000 最低餘額",
+            "獎勵資格以目前條款為準",
             "僅限部分國家",
             "條款可能變更"
           ],
-          officialQuote: "加入 Xapo Bank，最高可獲得 500 美元比特幣獎勵。比特幣享受 0.50% 無風險收益，美元享受 3.35% 利息，解鎖更多財富增值方式。",
-          disclaimer: "<strong>免責聲明：</strong>本頁面為個人推薦頁面，不構成金融建議。Xapo Bank 年費 $1000，推薦獎勵需 $5,000+ 餘額。申請前請閱讀全部條款。產品條款和可用性可能變更。"
+          officialQuote: "Xapo 將受監管的美元銀行服務與受監管的比特幣服務結合，同時明確區分兩者的法律保障。",
+          disclaimer: "<strong>免責聲明：</strong>本頁面為獨立的個人推薦頁面，不構成金融、法律或稅務建議。如你符合資格並成功啟用會員，我可能獲得獎勵。比特幣不受直布羅陀存款保障計畫保護。申請前請向 Xapo 核對目前資格、費用和活動條款。"
         },
         ko: {
           label: "한국어",
@@ -1152,10 +1182,10 @@
           brandSubtitle: "비트코인 리워드 프리미엄 뱅킹",
           rewardBadge: "최대 $500 비트코인 리워드",
           headline: "비트코인을 지급하는 은행",
-          intro: "<strong>Xapo Bank는 실제 문제를 해결합니다:</strong> 전통 은행은 0% 이자를 주는 반면 인플레이션이 당신의 저축을 잠식합니다. Xapo는 <strong>비트코인 0.5% 수익</strong>과 <strong>USD 3.35% 이자</strong>를 제공합니다——글로벌 결제용 프리미엄 직불카드도 포함.",
+          intro: "<strong>명확한 사용 사례를 위한 서비스:</strong> 하나의 멤버십에서 비트코인 보관, 규제된 USD 뱅킹, 지원 자산 전환, 송금과 글로벌 결제를 이용합니다.",
           problemsTitle: "왜 Xapo를 선택했나",
           problem1Title: "0% 이자 문제",
-          problem1Desc: "전통 은행은 이자가 없지만 Xapo는 USD 예금에 3.35%를 제공",
+          problem1Desc: "법정화폐와 비트코인 서비스는 지브롤터의 별도 규제 법인이 제공합니다",
           problem2Title: "글로벌 결제",
           problem2Desc: "프리미엄 직불카드가 전 세계에서 작동, 숨겨진 외환 수수료 없음",
           problem3Title: "비트코인 노출",
@@ -1185,19 +1215,19 @@
           howList: [
             "추천 링크 클릭",
             "등록 완료",
-            "$5,000+ 잔액 유지",
-            "매월 BTC 리워드 수령"
+            "현재 프로모션의 활성화 요건 충족",
+            "현재 리워드 조건 충족"
           ],
           noteTitle: "중요 사항",
           noteIntro: "신청 전 반드시 이해해야 할 사항:",
           noteList: [
             "연회비 $1000",
-            "리워드는 $5,000 최소 잔액 필요",
+            "리워드 자격은 현재 약관에 따름",
             "일부 국가에서만 이용 가능",
             "약관은 변경될 수 있음"
           ],
-          officialQuote: "Xapo Bank에 가입하고 최대 USD 500 상당의 비트코인을 받으세요. 비트코인에는 0.50% 무위험 수익, USD에는 3.35% 이자가 제공됩니다.",
-          disclaimer: "<strong>면책 조항:</strong> 이 페이지는 개인 추천 페이지이며 금융 자문이 아닙니다. Xapo Bank는 연회비 $1000이 있으며 추천 리워드는 $5,000+ 잔액이 필요합니다. 신청 전 모든 약관을 읽어보세요. 제품 약관과 이용 가능성은 변경될 수 있습니다."
+          officialQuote: "Xapo는 규제된 USD 뱅킹과 비트코인 서비스를 결합하면서 각각의 법적 보호를 구분합니다.",
+          disclaimer: "<strong>고지:</strong> 이 페이지는 독립적인 개인 추천 페이지이며 금융, 법률 또는 세무 자문이 아닙니다. 자격을 충족하고 멤버십을 활성화하면 제가 리워드를 받을 수 있습니다. 비트코인은 예금자 보호 대상이 아닙니다. 신청 전 Xapo에서 현재 자격, 수수료 및 추천 조건을 확인하세요."
         },
         ja: {
           label: "日本語",
@@ -1206,10 +1236,10 @@
           brandSubtitle: "ビットコイン報酬付きプレミアムバンキング",
           rewardBadge: "最大 $500 のビットコイン報酬",
           headline: "ビットコインを支払う銀行",
-          intro: "<strong>Xapo Bankは実際の問題を解決します:</strong> 従来の銀行は 0% の金利しか出さないのに対し、インフレがあなたの貯蓄を侵食しています。Xapo は<strong>ビットコイン 0.5% の利回り</strong>と<strong>USD 3.35% の利息</strong>を提供します——グローバル決済用のプレミアムデビットカードも付属.",
+          intro: "<strong>明確な利用目的のためのサービス：</strong>ひとつのメンバーシップで、ビットコインの保有、規制された USD 銀行サービス、対応資産の交換、送金、海外決済を利用できます。",
           problemsTitle: "なぜ Xapo を選んだか",
           problem1Title: "0% 金利の問題",
-          problem1Desc: "従来の銀行は金利ゼロ、Xapo は USD 預金に 3.35% を提供",
+          problem1Desc: "法定通貨とビットコインのサービスは、ジブラルタルの別々の規制法人が提供します",
           problem2Title: "グローバル決済",
           problem2Desc: "プレミアムデビットカードが世界中で動作、隠れた為替手数料なし",
           problem3Title: "ビットコインへのエクスポージャー",
@@ -1239,35 +1269,35 @@
           howList: [
             "紹介リンクをクリック",
             "登録を完了",
-            "$5,000+ の残高を維持",
-            "毎月 BTC 報酬を受け取る"
+            "現在のキャンペーンの有効化条件を満たす",
+            "現在の報酬条件を満たす"
           ],
           noteTitle: "重要事項",
           noteIntro: "申請前に必ず理解しておくべき事項:",
           noteList: [
             "年会費 $1000",
-            "報酬には $5,000 の最低残高が必要",
+            "報酬資格は現在の規約に従います",
             "一部の国でのみ利用可能",
             "利用規約は変更される可能性あり"
           ],
-          officialQuote: "Xapo Bank に参加して、最大 USD 500 相当のビットコインを獲得しましょう。ビットコインには 0.50% のリスクフリー利回り、USD には 3.35% の利息が付きます.",
-          disclaimer: "<strong>免責事項:</strong> このページは個人的な紹介ページであり、金融アドバイスではありません。Xapo Bank には年会費 $1000 がかかり、紹介報酬には $5,000+ の残高が必要です。申請前にすべての規約をお読みください。製品規約と利用可能性は変更される可能性があります."
+          officialQuote: "Xapo は規制された USD 銀行サービスとビットコインサービスを組み合わせつつ、それぞれの法的保護を明確に区別しています。",
+          disclaimer: "<strong>開示事項:</strong> このページは独立した個人紹介ページであり、金融・法律・税務上の助言ではありません。資格を満たしてメンバーシップを有効化した場合、私が報酬を受け取ることがあります。ビットコインは預金保護の対象ではありません。申請前に現在の資格、料金、紹介条件を Xapo で確認してください。"
         },
         es: {
           label: "Español",
           lang: "es",
           brandTitle: "Xapo Bank",
-          brandSubtitle: "Banca Premium con Recompensas Bitcoin",
+          brandSubtitle: "Banca regulada para titulares de Bitcoin",
           rewardBadge: "Gana hasta $500 en Bitcoin",
-          headline: "El Banco Que Te Paga en Bitcoin",
-          intro: "<strong>Xapo Bank resuelve un problema real:</strong> Los bancos tradicionales te dan 0% de interés mientras la inflación come tus ahorros. Xapo te da <strong>0.5% de rendimiento en Bitcoin</strong> y <strong>3.35% en USD</strong> — más una tarjeta de débito premium para gastos globales.",
-          problemsTitle: "Por Qué Cambié a Xapo",
-          problem1Title: "Problema del 0% Interés",
-          problem1Desc: "Los bancos tradicionales no pagan nada mientras Xapo te da 3.35% en depósitos USD",
+          headline: "Bitcoin y banca cotidiana en una sola membresía",
+          intro: "<strong>Creado para una necesidad concreta:</strong> mantener Bitcoin, acceder a banca regulada en USD, convertir activos compatibles, transferir dinero y gastar globalmente desde una sola membresía.",
+          problemsTitle: "Cuándo puede ser útil Xapo",
+          problem1Title: "Acceso regulado",
+          problem1Desc: "La banca fiduciaria y los servicios Bitcoin operan mediante entidades reguladas separadas en Gibraltar",
           problem2Title: "Gasto Global",
           problem2Desc: "Tarjeta de débito premium funciona mundialmente sin comisiones ocultas",
-          problem3Title: "Exposición Bitcoin",
-          problem3Desc: "Gana 0.5% en Bitcoin sin la complejidad de exchanges",
+          problem3Title: "Flujo entre BTC y dinero fiduciario",
+          problem3Desc: "Mantén, convierte y mueve activos compatibles dentro de un flujo de cuenta documentado",
           primaryLink: "🚀 Únete a Xapo Bank Ahora",
           copyCode: "📋 Copiar Código: UKG-KVD-BU",
           heroNote: "💡 <strong>Consejo:</strong> Usa mi código <strong>UKG-KVD-BU</strong> al registrarte. Obtendrás hasta $500 en recompensas Bitcoin, y yo también recibiré un pequeño bono. Ganamos ambos.",
@@ -1280,48 +1310,56 @@
           copySuccess: "✅ ¡Copiado! Pégalo durante el registro",
           copyError: "❌ Error al copiar. Por favor copia manualmente.",
           benefitsTitle: "Lo Que Obtienes",
+          benefit1Title: "Hasta $500 en BTC",
+          benefit1Desc: "Sujeto a activación y a las condiciones vigentes",
+          benefit2Title: "Servicios Bitcoin regulados",
+          benefit2Desc: "BTC se mantiene separado y no está cubierto por seguro de depósitos",
+          benefit3Title: "Vías bancarias en USD",
+          benefit3Desc: "Acceso a transferencias bancarias y stablecoins compatibles",
+          benefit4Title: "Tarjeta de débito premium",
+          benefit4Desc: "Gasto global sin comisión FX de Xapo, sujeto a condiciones",
           whyTitle: "¿Por Qué Xapo Bank?",
           whyIntro: "No es solo otro banco digital. Xapo combina la seguridad bancaria tradicional con innovación cripto.",
           whyList: [
             "Institución bancaria licenciada",
-            "Rendimiento real Bitcoin, no especulación",
+            "Marco regulado separado para servicios Bitcoin",
             "Tarjetas físicas y virtuales",
             "Soporte al cliente 24/7"
           ],
           howTitle: "Cómo Funciona el Referido",
-          howIntro: "Proceso simple de 3 pasos para obtener recompensas:",
+          howIntro: "Comprueba la promoción vigente antes de solicitar:",
           howList: [
             "Haz clic en el enlace",
             "Completa el registro",
-            "Mantén $5,000+ de saldo",
-            "Recibe recompensas BTC mensualmente"
+            "Cumple los requisitos de activación vigentes",
+            "Cumple las condiciones vigentes de activación y recompensa"
           ],
           noteTitle: "Notas Importantes",
           noteIntro: "Asegúrate de entender esto antes de aplicar:",
           noteList: [
             "Cuota anual de $1000",
-            "$5,000 mínimo para recompensas",
+            "La elegibilidad depende de las condiciones vigentes",
             "Disponible en países selectos",
             "Términos pueden cambiar"
           ],
-          officialQuote: "Únete a Xapo Bank y gana hasta USD 500 en Bitcoin. Obtén 0.50% de rendimiento sin riesgo en Bitcoin y 3.35% de interés en USD.",
-          disclaimer: "<strong>Aviso Legal:</strong> Esta es una página de referido personal, no asesoramiento financiero. Xapo Bank tiene una cuota anual de $1000 y requiere $5,000+ de saldo. Lee todos los términos antes de aplicar. Los términos pueden cambiar."
+          officialQuote: "Xapo combina banca regulada en USD y servicios Bitcoin regulados, manteniendo distintas sus protecciones legales.",
+          disclaimer: "<strong>Aviso:</strong> Esta es una página personal e independiente de referido, no asesoramiento financiero, legal o fiscal. Puedo recibir una recompensa si cumples los requisitos y activas la membresía. La membresía se anuncia actualmente a $1.000/año. Bitcoin no está cubierto por el sistema de garantía de depósitos de Gibraltar. Comprueba directamente con Xapo la elegibilidad, tarifas y condiciones vigentes."
         },
         fr: {
           label: "Français",
           lang: "fr",
           brandTitle: "Xapo Bank",
-          brandSubtitle: "Banque Premium avec Récompenses Bitcoin",
+          brandSubtitle: "Services bancaires réglementés pour détenteurs de Bitcoin",
           rewardBadge: "Gagnez jusqu'à $500 en Bitcoin",
-          headline: "La Banque Qui Vous Paie en Bitcoin",
-          intro: "<strong>Xapo Bank résout un vrai problème:</strong> Les banques traditionnelles vous donnent 0% d'intérêt pendant que l'inflation mange vos économies. Xapo vous donne <strong>0.5% de rendement sur Bitcoin</strong> et <strong>3.35% sur USD</strong> — plus une carte de débit premium pour les dépenses mondiales.",
-          problemsTitle: "Pourquoi J'ai Choisi Xapo",
-          problem1Title: "Problème du 0% Intérêt",
-          problem1Desc: "Les banques traditionnelles ne paient rien tandis que Xapo vous donne 3.35% sur les dépôts USD",
+          headline: "Bitcoin et services bancaires quotidiens réunis",
+          intro: "<strong>Conçu pour un besoin précis :</strong> conserver des bitcoins, accéder à des services bancaires réglementés en USD, convertir des actifs pris en charge, transférer de l'argent et payer à l'international avec une seule adhésion.",
+          problemsTitle: "Quand Xapo peut être utile",
+          problem1Title: "Accès réglementé",
+          problem1Desc: "Les services fiduciaires et Bitcoin sont fournis par deux entités distinctes réglementées à Gibraltar",
           problem2Title: "Dépenses Mondiales",
           problem2Desc: "Carte de débit premium fonctionne dans le monde entier sans frais de change cachés",
-          problem3Title: "Exposition Bitcoin",
-          problem3Desc: "Gagnez 0.5% sur Bitcoin sans la complexité des exchanges",
+          problem3Title: "Parcours BTC et monnaie fiduciaire",
+          problem3Desc: "Conservez, convertissez et transférez les actifs pris en charge dans un parcours documenté",
           primaryLink: "🚀 Rejoignez Xapo Bank",
           copyCode: "📋 Copier le Code: UKG-KVD-BU",
           heroNote: "💡 <strong>Conseil:</strong> Utilisez mon code <strong>UKG-KVD-BU</strong> lors de l'inscription. Vous obtiendrez jusqu'à $500 en récompenses Bitcoin, et je recevrai aussi un petit bonus. Gagnant-gagnant.",
@@ -1334,36 +1372,78 @@
           copySuccess: "✅ Copié ! Collez pendant l'inscription",
           copyError: "❌ Échec de la copie. Veuillez copier manuellement.",
           benefitsTitle: "Ce Que Vous Obtenez",
+          benefit1Title: "Jusqu'à 500 $ en BTC",
+          benefit1Desc: "Sous réserve d'activation et des conditions en vigueur",
+          benefit2Title: "Services Bitcoin réglementés",
+          benefit2Desc: "Les BTC sont séparés et ne bénéficient pas de la garantie des dépôts",
+          benefit3Title: "Réseaux bancaires en USD",
+          benefit3Desc: "Accès aux virements bancaires et stablecoins pris en charge",
+          benefit4Title: "Carte de débit premium",
+          benefit4Desc: "Paiements internationaux sans frais de change Xapo, sous conditions",
           whyTitle: "Pourquoi Xapo Bank?",
           whyIntro: "Pas juste une autre banque digitale. Xapo combine la sécurité bancaire traditionnelle avec l'innovation crypto.",
           whyList: [
             "Institution bancaire agréée",
-            "Vrai rendement Bitcoin, pas de spéculation",
+            "Cadre réglementé distinct pour les services Bitcoin",
             "Cartes physiques et virtuelles",
             "Support client 24/7"
           ],
           howTitle: "Comment Fonctionne le Parrainage",
-          howIntro: "Processus simple en 3 étapes pour obtenir les récompenses:",
+          howIntro: "Vérifiez la promotion en vigueur avant votre demande :",
           howList: [
             "Cliquez sur le lien de parrainage",
             "Complétez l'inscription",
-            "Maintenez $5,000+ de solde",
-            "Recevez les récompenses BTC mensuellement"
+            "Respectez les conditions d'activation en vigueur",
+            "Respectez les conditions d'activation et de récompense en vigueur"
           ],
           noteTitle: "Notes Importantes",
           noteIntro: "Assurez-vous de comprendre ceci avant de postuler:",
           noteList: [
             "Frais annuels de $1000",
-            "$5,000 minimum pour les récompenses",
+            "L'éligibilité dépend des conditions en vigueur",
             "Disponible dans certains pays",
             "Les conditions peuvent changer"
           ],
-          officialQuote: "Rejoignez Xapo Bank et gagnez jusqu'à USD 500 en Bitcoin. Obtenez 0,50% de rendement sans risque sur le Bitcoin et 3,35% d'intérêt sur l'USD.",
-          disclaimer: "<strong>Avertissement:</strong> Cette page est une page de parrainage personnelle, pas un conseil financier. Xapo Bank a des frais annuels de $1000 et nécessite $5,000+ de solde. Lisez tous les termes avant de postuler. Les termes peuvent changer."
+          officialQuote: "Xapo réunit des services bancaires réglementés en USD et des services Bitcoin réglementés, tout en maintenant leurs protections juridiques distinctes.",
+          disclaimer: "<strong>Avertissement :</strong> Cette page de parrainage est personnelle et indépendante ; elle ne constitue pas un conseil financier, juridique ou fiscal. Je peux recevoir une récompense si vous êtes éligible et activez votre adhésion. L'adhésion est actuellement annoncée à 1 000 $ par an. Le Bitcoin n'est pas couvert par le système de garantie des dépôts de Gibraltar. Vérifiez directement auprès de Xapo l'éligibilité, les frais et les conditions en vigueur."
+        },
+        ar: {
+          label: "العربية", lang: "ar", dir: "rtl", brandTitle: "Xapo Bank",
+          brandSubtitle: "خدمات مصرفية منظمة لحاملي البيتكوين",
+          rewardBadge: "احصل على مكافأة تصل إلى 500 دولار بالبيتكوين",
+          headline: "البيتكوين والخدمات المصرفية اليومية في عضوية واحدة",
+          intro: "<strong>مصمم لحالة استخدام واضحة:</strong> الاحتفاظ بالبيتكوين، والوصول إلى حساب مصرفي منظم بالدولار، وتحويل الأصول المدعومة، وإرسال الأموال والإنفاق عالمياً من خلال عضوية واحدة.",
+          problemsTitle: "متى يمكن أن يكون Xapo مفيداً؟",
+          problem1Title: "وصول ضمن إطار منظم",
+          problem1Desc: "تعمل الخدمات المصرفية وخدمات البيتكوين من خلال كيانين منفصلين ومنظمين في جبل طارق",
+          problem2Title: "الإنفاق العالمي",
+          problem2Desc: "بطاقة خصم مميزة للإنفاق الدولي من دون رسوم صرف أجنبي يضيفها Xapo، وفقاً للشروط",
+          problem3Title: "مسار بين البيتكوين والعملات التقليدية",
+          problem3Desc: "الاحتفاظ بالأصول المدعومة وتحويلها ونقلها ضمن حساب موثق واحد",
+          primaryLink: "انضم إلى Xapo Bank", copyCode: "نسخ رمز الإحالة: UKG-KVD-BU",
+          heroNote: "<strong>إفصاح:</strong> استخدم رمز الإحالة <strong>UKG-KVD-BU</strong> عند التسجيل. قد نحصل كلانا على مكافأة بيتكوين إذا استوفيت شروط العرض الحالي وأكملت التفعيل.",
+          cardBadge: "مزايا الإحالة", cardTitle: "تفاصيل الإحالة",
+          cardCopy: "تحقق من الأهلية وشروط التفعيل الحالية مباشرة لدى Xapo قبل التقديم.",
+          referralLabel: "رمز الإحالة", linkLabel: "أو استخدم هذا الرابط:", copyInline: "نسخ الرمز",
+          copySuccess: "تم النسخ. الصقه أثناء التسجيل", copyError: "تعذر النسخ. يرجى نسخه يدوياً.",
+          benefitsTitle: "ما الذي تتضمنه العضوية؟",
+          benefit1Title: "حتى 500 دولار بالبيتكوين", benefit1Desc: "وفقاً لشروط التفعيل والإحالة الحالية",
+          benefit2Title: "خدمات بيتكوين منظمة", benefit2Desc: "يُفصل البيتكوين قانونياً ولا يشمله تأمين الودائع",
+          benefit3Title: "قنوات مصرفية بالدولار", benefit3Desc: "الوصول إلى التحويلات المصرفية والعملات المستقرة المدعومة",
+          benefit4Title: "بطاقة خصم مميزة", benefit4Desc: "إنفاق عالمي من دون رسوم صرف من Xapo، وفقاً للشروط",
+          whyTitle: "لماذا Xapo Bank؟",
+          whyIntro: "يجمع بين الخدمات المصرفية المنظمة وخدمات البيتكوين ضمن إطارين قانونيين منفصلين.",
+          whyList: ["مؤسسة مصرفية مرخصة في جبل طارق", "إطار منظم منفصل لخدمات البيتكوين", "بطاقات فعلية وافتراضية", "قنوات تحويل دولية مدعومة"],
+          howTitle: "كيف تعمل الإحالة؟", howIntro: "راجع العرض الحالي قبل التقديم:",
+          howList: ["افتح رابط الإحالة", "أكمل التحقق والتسجيل", "حافظ على الرصيد المطلوب في العرض الحالي", "استوفِ شروط التفعيل والمكافأة الحالية"],
+          noteTitle: "ملاحظات مهمة", noteIntro: "تأكد من فهم ما يلي قبل التقديم:",
+          noteList: ["تُعرض العضوية حالياً بسعر 1,000 دولار سنوياً", "تخضع المكافآت للأهلية والشروط الحالية", "الخدمة متاحة في دول محددة فقط", "البيتكوين غير مشمول بنظام ضمان الودائع"],
+          officialQuote: "يجمع Xapo بين الخدمات المصرفية المنظمة بالدولار وخدمات البيتكوين المنظمة، مع إبقاء الحماية القانونية لكل منهما منفصلة.",
+          disclaimer: "<strong>تنبيه:</strong> هذه صفحة إحالة شخصية ومستقلة وليست نصيحة مالية أو قانونية أو ضريبية. قد أتلقى مكافأة إذا كنت مؤهلاً وقمت بتفعيل العضوية. تحقق مباشرة لدى Xapo من الأهلية والرسوم والأسعار وشروط الإحالة الحالية."
         }
       };
 
-      const languageOrder = ["en", "zh-CN", "zh-TW", "ko", "ja", "es", "fr"];
+      const languageOrder = ["en", "ar", "fr", "es", "zh-CN", "zh-TW", "ko", "ja"];
 
       const elements = {
         brandTitle: document.getElementById("brand-title"),
@@ -1389,6 +1469,14 @@
         copyInline: document.getElementById("copy-inline"),
         copyFeedback: document.getElementById("copy-feedback"),
         benefitsTitle: document.getElementById("benefits-title"),
+        benefit1Title: document.getElementById("benefit-1-title"),
+        benefit1Desc: document.getElementById("benefit-1-desc"),
+        benefit2Title: document.getElementById("benefit-2-title"),
+        benefit2Desc: document.getElementById("benefit-2-desc"),
+        benefit3Title: document.getElementById("benefit-3-title"),
+        benefit3Desc: document.getElementById("benefit-3-desc"),
+        benefit4Title: document.getElementById("benefit-4-title"),
+        benefit4Desc: document.getElementById("benefit-4-desc"),
         whyTitle: document.getElementById("why-title"),
         whyIntro: document.getElementById("why-intro"),
         whyList: document.getElementById("why-list"),
@@ -1431,11 +1519,12 @@
           if (value.startsWith("ja")) return "ja";
           if (value.startsWith("es")) return "es";
           if (value.startsWith("fr")) return "fr";
+          if (value.startsWith("ar")) return "ar";
           if (value.startsWith("en")) return "en";
         }
         
-        // 默认返回中文（主要用户群体）
-        return "zh-CN";
+        // English is the primary version when the browser has no supported locale.
+        return "en";
       }
 
       function setLanguage(language) {
@@ -1443,6 +1532,7 @@
         const t = translations[key];
 
         document.documentElement.lang = t.lang;
+        document.documentElement.dir = t.dir || "ltr";
         document.title = `${t.brandTitle} - ${t.headline} | Ziyu.co`;
 
         elements.brandTitle.textContent = t.brandTitle;
@@ -1467,6 +1557,14 @@
         elements.linkLabel.textContent = t.linkLabel;
         elements.copyInline.textContent = t.copyInline;
         elements.benefitsTitle.textContent = t.benefitsTitle;
+        elements.benefit1Title.textContent = t.benefit1Title || translations.en.benefit1Title;
+        elements.benefit1Desc.textContent = t.benefit1Desc || translations.en.benefit1Desc;
+        elements.benefit2Title.textContent = t.benefit2Title || translations.en.benefit2Title;
+        elements.benefit2Desc.textContent = t.benefit2Desc || translations.en.benefit2Desc;
+        elements.benefit3Title.textContent = t.benefit3Title || translations.en.benefit3Title;
+        elements.benefit3Desc.textContent = t.benefit3Desc || translations.en.benefit3Desc;
+        elements.benefit4Title.textContent = t.benefit4Title || translations.en.benefit4Title;
+        elements.benefit4Desc.textContent = t.benefit4Desc || translations.en.benefit4Desc;
         elements.whyTitle.textContent = t.whyTitle;
         elements.whyIntro.textContent = t.whyIntro;
         elements.howTitle.textContent = t.howTitle;
@@ -1504,6 +1602,7 @@
         
         // 创建下拉选择器
         const select = document.createElement("select");
+        select.setAttribute("aria-label", "Language");
         select.style.cssText = "border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 8px; padding: 6px 12px; font: inherit; font-size: 0.8rem; cursor: pointer;";
         
         languageOrder.forEach((language) => {
@@ -1520,17 +1619,14 @@
         container.appendChild(select);
         
         // 设置当前语言
-        const savedLanguage = localStorage.getItem("xapo-language") || detectLanguage();
-        select.value = savedLanguage;
+        select.value = detectLanguage();
       }
 
       initLanguageButtons();
-      const savedLanguage = localStorage.getItem("xapo-language");
-      setLanguage(savedLanguage || detectLanguage());
+      setLanguage(detectLanguage());
 
       document.getElementById("copy-code").addEventListener("click", copyReferralCode);
       document.getElementById("copy-inline").addEventListener("click", copyReferralCode);
-    }
   </script>
 </body>
 </html>
